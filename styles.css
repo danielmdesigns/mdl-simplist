@@ -1,0 +1,115 @@
+/* version history*/
+.demo-card-square.mdl-card {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.mdl-card {
+  min-height: auto;
+}
+
+.mdl-card__supporting-text {
+  padding-top: 0;
+}
+
+small {
+  margin-left: 20px;
+  color: #e5e5e5;
+}
+
+/* report an issue */
+.mdl-card {
+  width: 90%;
+}
+
+#bug, #support {
+  margin-top: 20px;
+}
+
+.mdl-button.mdl-button--colored {
+  color: #2dc32c;
+}
+
+/* support */
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.mdl-layout__header {
+  background-color: #2dc32c;
+}
+
+.mdl-button--fab {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1;
+}
+
+#fab {
+  color: #FFFFFF;
+}
+
+ul {
+  padding: 0;
+}
+
+#list li {
+  border-bottom: 1px solid #e5e5e5;
+  color: #333;
+  padding: 16px 20px 20px 20px;
+  display: block;
+  font-size: 16px;
+  overflow: hidden;
+  background: white;
+  cursor: pointer;
+  /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24)*/
+}
+
+#list li:after {
+  font-family: FontAwesome;
+  content: "\f00c";
+  float: right;
+  color: #e5e5e5;
+}
+
+#list li:last {
+  margin-bottom: 20px;
+}
+
+#list li:hover:after {
+  color: #2dc32c;
+}
+
+.mdl-textfield {
+  width: 100%;
+  padding-bottom: 0;
+}
+
+.mdl-textfield .mdl-textfield__input {
+  padding: 20px 0 16px 20px;
+  background-color: #FFFFFF;
+  border-width: medium medium 0px;
+}
+
+.mdl-textfield .mdl-textfield__label {
+  padding-left: 20px;
+  top: 40px;
+}
+
+.mdl-textfield .mdl-textfield__label:after {
+  background-color: #2dc32c;
+  position: fixed;
+  bottom: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

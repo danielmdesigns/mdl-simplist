@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<!--Character Encoding-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--IE compatibility mode-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--Mobile Device Support-->
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+<!-- Stylesheets -->
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+<!-- Favicons -->
+<!--
+<link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="imgs/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="imgs/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="imgs/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="imgs/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="imgs/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="imgs/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="imgs/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-32x32.png" sizes="32x32">
+<!--<link rel="icon" type="image/png" href="imgs/favicons/favicon-194x194.png" sizes="194x194">-->
+<!--
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="imgs/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="imgs/favicons/manifest.json">
+<link rel="shortcut icon" href="imgs/favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#2fc42e">
+<meta name="msapplication-TileImage" content="imgs/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="imgs/favicons/browserconfig.xml">
+<meta name="theme-color" content="#2fc42e">
+-->
+<title>Simplist</title>
+
+</head>
+<body>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+<!-- Header -->
+<header class="mdl-layout__header">
+  <div id="goback" class="mdl-layout__drawer-button">
+      <i class="material-icons">arrow_back</i>
+  </div>
+  <div class="mdl-layout__header-row">
+
+    <!-- App Title -->
+    <span class="mdl-layout-title">Simplist</span>
+
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+
+    <!-- Dropdown Icon -->
+    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+      <i class="material-icons">more_vert</i>
+    </button>
+
+    <!-- Right Dropdown Menu -->
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+      <li class="mdl-menu__item"><i class="fa fa-dollar"></i> Support</li>
+      <li class="mdl-menu__item">Another Action</li>
+      <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+      <li class="mdl-menu__item">Yet Another Action</li>
+    </ul>
+
+  </div>
+</header>
+
+<!-- Left Drawer Menu -->
+<div class="mdl-layout__drawer">
+  <span class="mdl-layout-title">Simplist</span>
+  <nav class="mdl-navigation">
+    <a class="mdl-navigation__link" href="simplist.html">Homepage</a>
+    <a class="mdl-navigation__link" href="bug.html">Report an Issue</a>
+    <a class="mdl-navigation__link" href="version.html">Version History</a>
+    <a class="mdl-navigation__link" href="http://www.danielmdesigns.com" target="_blank">Developer Website</a>
+  </nav>
+</div>
+
+<!-- Main -->
+<article>
+<!-- Square card -->
+<div class="demo-card-square mdl-card mdl-shadow--2dp center">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Version 1.2.0</h2> <small>9/11/2015</small>
+  </div>
+  <div class="mdl-card__supporting-text">
+      Simplist App moved from a custom material design using html, css, javascript, and jQuery to Google.com's Material Design Lite framework that allows for an app that is to spec
+  </div>
+</div>
+</article>
+
+<article>
+<!-- Square card -->
+<div class="demo-card-square mdl-card mdl-shadow--2dp center">
+  <div class="mdl-card__title mdl-card--expand">
+    <h2 class="mdl-card__title-text">Version 1.0.0</h2> <small>9/02/2015</small>
+  </div>
+  <div class="mdl-card__supporting-text">
+      Fixed favicon image path. Create new sub-pages. Fixed jumpy header on iOS devices. Enlarge FAB button on mobile devices, not screen/pixel resolution. Add functionality to users who submit using "Enter".
+  </div>
+</div>
+</article>
+
+</div>
+<!-- Javascript Support -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+<script src="javascript.js"></script>
+</body>
+</html>

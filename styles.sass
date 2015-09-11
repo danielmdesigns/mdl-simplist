@@ -1,0 +1,65 @@
+@import "version.sass";
+@import "colors.sass";
+
+*
+  list-style: none
+  text-decoration: none
+
+.center
+    margin:0 auto
+
+.mdl-layout__header
+  background-color: $primary
+  
+.mdl-button--fab
+  position: fixed
+  bottom: 15px
+  right: 15px
+  z-index: 1
+
+#fab
+  color: $white
+
+ul
+  padding: 0
+
+#list li
+  border-bottom: 1px solid $gray
+  color: #333
+  padding: 16px 20px 20px 20px
+  display: block
+  font-size: 16px
+  overflow: hidden
+  background: white
+  cursor: pointer
+  /*box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24)*/
+  &:after
+    font-family: FontAwesome
+    content: "\f00c"
+    float: right
+    color: $gray
+  &:last
+    margin-bottom: 20px
+  
+#list li:hover:after
+  color: $primary
+  
+.mdl-textfield
+  width: 100%
+  padding-bottom: 0
+  .mdl-textfield__input
+    padding: 20px 0 16px 20px
+    background-color: $white
+    border-width: medium medium 0px
+  .mdl-textfield__label
+    padding-left: 20px
+    top: 40px
+  .mdl-textfield__label:after
+    background-color: $primary
+    position: fixed
+    bottom: 0
+  
+footer
+  position: fixed
+  bottom: 0
+  width: 100%
