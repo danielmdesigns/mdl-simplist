@@ -1,36 +1,3 @@
-/* version history*/
-.demo-card-square.mdl-card {
-  width: 90%;
-  margin-top: 20px;
-}
-
-.mdl-card {
-  min-height: auto;
-}
-
-.mdl-card__supporting-text {
-  padding-top: 0;
-}
-
-small {
-  margin-left: 20px;
-  color: #e5e5e5;
-}
-
-/* report an issue */
-.mdl-card {
-  width: 90%;
-}
-
-#bug, #support {
-  margin-top: 20px;
-}
-
-.mdl-button.mdl-button--colored {
-  color: #2dc32c;
-}
-
-/* support */
 * {
   list-style: none;
   text-decoration: none;
@@ -112,4 +79,38 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  /* version history*/
 }
+
+.demo-card-square.mdl-card {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.mdl-card {
+  min-height: auto;
+}
+
+.mdl-card__supporting-text {
+  padding-top: 0;
+}
+
+small {
+  margin-left: 20px;
+  color: #e5e5e5;
+}
+
+/* report an issue */
+.mdl-card {
+  width: 90%;
+}
+
+#bug, #support {
+  margin-top: 20px;
+}
+
+.mdl-button.mdl-button--colored {
+  color: #2dc32c;
+}
+
+/* support */
