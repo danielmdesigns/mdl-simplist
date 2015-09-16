@@ -53,12 +53,11 @@ $("#goback").on("click", function(){
 
 var ismobile=navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
 if(window.navigator.standalone === false){
-  alert("Add this web app to the home screen of your device for better access.");
-}else if(ismobile === true){
-  //alert("Add this web app to the home screen of your device for better access.");
-} else{
-  //
+  setTimeout(function(){
+    alert("Add this web app to the home screen of your device for easier access.");
+  }, 5000);
+}else{
+  //NaN
 }
-
 
 });
