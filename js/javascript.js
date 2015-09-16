@@ -8,13 +8,6 @@ $('#fab').click( function(e){
 	return false;
    }
 });
-
-//$('#simplist').on("keypress", function(e){
-//    if(e.keyCode === 13 ){
-//        var $item = $("input").val();
-//        $("ul").append("<li>" + $item + "</li>");
-//    }
-//});
     
 //list logic & browser storage
 //add using "button"
@@ -27,6 +20,12 @@ $('#form')[0].reset();
   var list = $('#list').html();
   localStorage.setItem('list', list);
   return false;
+});
+
+$('input').on("keypress", function(e){
+   if(e.keyCode === 13 ){
+       $("button[id='fab']").click();
+   }
 });
     
 //shows
@@ -51,5 +50,15 @@ $("#goback").on("click", function(){
 	window.location.href = "simplist.html";
 	return false;
 });
+
+var ismobile=navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+if(window.navigator.standalone === false){
+  alert("Add this web app to the home screen of your device for better access.");
+}else if(ismobile === true){
+  //alert("Add this web app to the home screen of your device for better access.");
+} else{
+  //
+}
+
 
 });
