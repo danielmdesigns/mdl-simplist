@@ -45,13 +45,29 @@ $("ul").on("click", "li", function (){
     localStorage.setItem('list', newList);
 });
 
-$("#goback").on("click", function(){
-	//alert("im working");
+/*$("#goback").on("click", function(){
+	alert("im working");
 	window.location.href = "simplist.html";
 	return false;
+});*/
+
+/* SPA */
+//$(".mdl-layout__drawer-button").hasClass(".goback")
+$("#report").on("click", function(){
+	$("#main-page-content").load("bug.html");
+	$(".mdl-layout__drawer-button").css("border","1px dotted hotpink");
+	/*if($(".mdl-layout__drawer-button").children().hasClass("material-icons")){
+		$(".material-icons").replaceWith("<i class='material-icons goback'>arrow_back</i>");
+	}*/
+});
+$("#version").on("click", function(){
+	$("#main-page-content").load("version.html");
+});
+$("#support").on("click", function(){
+	$("#main-page-content").load("support.html");
 });
 
-var ismobile=navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+//var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
 if(window.navigator.standalone === false){
   setTimeout(function(){
     alert("Add this web app to the home screen of your device for easier access.");
