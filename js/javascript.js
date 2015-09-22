@@ -45,33 +45,96 @@ $("ul").on("click", "li", function (){
     localStorage.setItem('list', newList);
 });
 
-/*$("#goback").on("click", function(){
-	alert("im working");
-	window.location.href = "simplist.html";
-	return false;
-});*/
-
 /* SPA */
-//$(".mdl-layout__drawer-button").hasClass(".goback")
+$("#developer").on("click", function(){
+	$(".mdl-layout__drawer").toggleClass("is-visible");
+});
+//report a bug
 $("#report").on("click", function(){
 	$("#main-page-content").load("bug.html");
-	$(".mdl-layout__drawer-button").css("border","1px dotted hotpink");
-	/*if($(".mdl-layout__drawer-button").children().hasClass("material-icons")){
-		$(".material-icons").replaceWith("<i class='material-icons goback'>arrow_back</i>");
-	}*/
-});
-$("#version").on("click", function(){
-	$("#main-page-content").load("version.html");
-});
-$("#support").on("click", function(){
-	$("#main-page-content").load("support.html");
+	$(".mdl-layout__drawer").toggleClass("is-visible");
+	$(function(){
+		function changeIcon(){
+			var getIcon = document.querySelector(".mdl-layout__drawer-button i");
+			if(getIcon){
+				getIcon.textContent = "arrow_back";
+			}
+			if(!getIcon){
+				setTimeout(function(){
+					changeIcon();
+				}, 50);
+			}
+		}
+		changeIcon();
+	});
+	$(".mdl-layout__drawer-button i").on("click", function(e){
+		e.stopImmediatePropagation();
+		//alert("i work");
+		window.location.href = "simplist.html";
+	});
 });
 
-//var ismobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+//version history
+$("#version").on("click", function(){
+	$("#main-page-content").load("version.html");
+	$(".mdl-layout__drawer").toggleClass("is-visible");
+	$(function(){
+		function changeIcon(){
+			var getIcon = document.querySelector(".mdl-layout__drawer-button i");
+			if(getIcon){
+				getIcon.textContent = "arrow_back";
+			}
+			if(!getIcon){
+				setTimeout(function(){
+					changeIcon();
+				}, 50);
+			}
+		}
+		changeIcon();
+	});
+	$(".mdl-layout__drawer-button i").on("click", function(e){
+		e.stopImmediatePropagation();
+		//alert("i work");
+		window.location.href = "simplist.html";
+	});
+});
+
+//support
+$("#support").on("click", function(e){
+	e.stopImmediatePropagation();
+	$("#main-page-content").load("support.html");
+	//$(".mdl-layout__drawer").toggleClass("is-visible");
+	$(function(){
+		function changeIcon(){
+			var getIcon = document.querySelector(".mdl-layout__drawer-button i");
+			if(getIcon){
+				getIcon.textContent = "arrow_back";
+			}
+			if(!getIcon){
+				setTimeout(function(){
+					changeIcon();
+				}, 50);
+			}
+		}
+		changeIcon();
+	});
+	$(".mdl-layout__drawer-button i").on("click", function(e){
+		e.stopImmediatePropagation();
+		//alert("i work");
+		window.location.href = "simplist.html";
+	});
+});
+
+$("#help").on("click", function(e){
+	e.stopImmediatePropagation();
+});
+
+//if url is not being viewed in Full Screen App Mode, alert users to save to home screen
 if(window.navigator.standalone === false){
   setTimeout(function(){
-    alert("Add this web app to the home screen of your device for easier access.");
-  }, 5000);
+    //alert("Add this web app to the home screen of your device for easier access.");
+	alert("Add this app to your home screen to quickly access Simplist!");
+  }, 10000);
 }else{
   //NaN
 }
