@@ -13,17 +13,21 @@ $white: #FFFFFF
 .mdl-layout__header
   background-color: $primary
   
+/* fab button */
 .mdl-button--fab
   position: fixed
   bottom: 15px
   right: 15px
   z-index: 1
-
+  
 #fab
   color: $white
 
+/* list */
 ul
   padding: 0
+  /*margin-bottom: 75px*/
+  margin-bottom: -14px
 
 #list li
   border-bottom: 1px solid $gray
@@ -39,8 +43,6 @@ ul
     content: "\f00c"
     float: right
     color: $gray
-  &:last
-    margin-bottom: 20px
   
 #list li:hover:after
   color: $primary
@@ -48,6 +50,8 @@ ul
 .mdl-textfield
   width: 100%
   padding-bottom: 0
+  position: fixed
+  bottom: 0
   .mdl-textfield__input
     padding: 20px 0 16px 20px
     background-color: $white
@@ -87,5 +91,3 @@ small
     margin-top: 20px
 .mdl-button.mdl-button--colored
     color: $primary
-
-/* support */

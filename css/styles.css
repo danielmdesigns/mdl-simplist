@@ -11,6 +11,7 @@
   background-color: #2dc32c;
 }
 
+/* fab button */
 .mdl-button--fab {
   position: fixed;
   bottom: 15px;
@@ -22,8 +23,11 @@
   color: #FFFFFF;
 }
 
+/* list */
 ul {
   padding: 0;
+  /*margin-bottom: 75px*/
+  margin-bottom: -14px;
 }
 
 #list li {
@@ -44,10 +48,6 @@ ul {
   color: #e5e5e5;
 }
 
-#list li:last {
-  margin-bottom: 20px;
-}
-
 #list li:hover:after {
   color: #2dc32c;
 }
@@ -55,6 +55,8 @@ ul {
 .mdl-textfield {
   width: 100%;
   padding-bottom: 0;
+  position: fixed;
+  bottom: 0;
 }
 
 .mdl-textfield .mdl-textfield__input {
@@ -111,5 +113,3 @@ small {
 .mdl-button.mdl-button--colored {
   color: #2dc32c;
 }
-
-/* support */
