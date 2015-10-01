@@ -54,6 +54,7 @@ $("#developer").on("click", function(){
 //report a bug
 $("#report").on("click", function(){
   $("#main-page-content").load("bug.html");
+  $("#fab").hide();
   $(".mdl-layout__drawer").toggleClass("is-visible");
   $(function(){
 	  function changeIcon(){
@@ -79,6 +80,7 @@ $("#report").on("click", function(){
 //version history
 $("#version").on("click", function(){
   $("#main-page-content").load("version.html");
+  $("#fab").hide();
   $(".mdl-layout__drawer").toggleClass("is-visible");
   $(function(){
 	  function changeIcon(){
@@ -106,6 +108,7 @@ $("#support").on("click", function(e){
   e.stopImmediatePropagation();
   $("#main-page-content").load("support.html");
   //$(".mdl-layout__drawer").toggleClass("is-visible");
+  $("#fab").hide();
   $(function(){
 	  function changeIcon(){
 		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
