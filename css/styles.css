@@ -82,6 +82,11 @@ footer {
   width: 100%;
 }
 
+a:link[class="contact-link"] {
+  color: #2dc32c;
+  text-decoration: underline;
+}
+
 /* version history*/
 .demo-card-square.mdl-card {
   width: 90%;
