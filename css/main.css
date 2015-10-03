@@ -1,0 +1,136 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{
+	font-family: 'Lato', sans-serif;
+}
+
+/* colors */
+.white-text {
+	color:#FFFFFF;
+}
+.gray-text{
+	color:#828282;
+}
+
+/* typography */
+h1{
+  font-weight: 300;
+  color:#828282;
+  line-height: 50px;
+  padding: 20px 0;
+}
+h2{
+  font-weight: 300;
+  color:#828282;
+  line-height: 50px;
+  padding: 50px 0;
+}
+h3{
+  font-weight: 700;
+}
+	
+/* Flatten boostrap */
+.well, .navbar-inner, .popover, .btn, .tooltip, input, select, textarea, pre, .progress, .modal, .add-on, .alert, .table-bordered, .nav>.active>a, .dropdown-menu, .tooltip-inner, .badge, .label, .img-polaroid, a:focus, a:active {
+ 	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	/*-webkit-border-radius: 0px !important;*/
+	/*-moz-border-radius: 0px !important;*/
+	/*border-radius: 0px !important;*/
+	border-collapse: collapse !important;
+	background-image: none !important;
+  	outline: none !important;
+}
+
+.pg-spcr {
+  margin-top: 50px;
+}
+
+.fa-square {
+  font-size: 100px;
+  color: #2dc32c;
+}
+
+/* buttons */
+.btn {
+  cursor:pointer;
+  padding: 20px 40px;
+}
+.btn-color {
+  background-color: #2dc32c;
+  color: #ffffff;
+}
+.btn-color:hover{
+	color: #FFFFFF;
+	background-color: #00b11e;
+}
+.btn-learn-more {
+  border: none;
+  color: #828282;
+  font-weight: 700;
+}
+.btn-learn-more:hover {
+  color: #2dc32c;
+}
+
+/* icon group */
+aside {
+  margin-top: 40px;
+}
+
+/* device icons */
+.fa-apple, .fa-android, .fa-windows {
+  font-size: 26px;
+  color: #2dc32c;
+  padding-right: 20px;
+}
+
+/* phone img */
+.phone {
+  width: 100%;
+}
+
+/* perks */
+#section {
+  background-color: #2dc32c;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* perks paragraph text*/
+
+.p-desc {
+	padding: 0 20px;
+	font-size: 16px;
+	font-weight: 300;
+}
+/* perks icons */
+.fa-circle {
+  color: #ffffff;
+  font-size: 75px;
+  display: block;
+}
+
+/* footer */
+footer {
+  background-color: #2dc32c;
+  color: #008719;
+  padding: 50px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+@media(max-width:767px){
+.btn{
+	width: 100%;
+}
+.btn-learn-more {
+	margin-top: 10px;
+}
+aside{
+	text-align: center;
+	margin-bottom: 40px;
+}
+}
