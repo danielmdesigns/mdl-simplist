@@ -8,11 +8,10 @@ $(document).ready(function(){
 	return false;
    }
 });*/
-    
+ 
 //list logic & browser storage
 //add using "button"
 $("#fab").on("click", function(){
-  //var $item = $("input").val();
   var $item = prompt("Add new Item");
   $("ul").append("<li>" + $item + "</li>");
     
@@ -72,7 +71,6 @@ $("#report").on("click", function(){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  //alert("i work");
 	  window.location.href = "simplist.html";
   });
 });
@@ -98,7 +96,6 @@ $("#version").on("click", function(){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  //alert("i work");
 	  window.location.href = "simplist.html";
   });
 });
@@ -107,7 +104,6 @@ $("#version").on("click", function(){
 $("#support").on("click", function(e){
   e.stopImmediatePropagation();
   $("#main-page-content").load("support.html");
-  //$(".mdl-layout__drawer").toggleClass("is-visible");
   $("#fab").hide();
   $(function(){
 	  function changeIcon(){
@@ -125,7 +121,6 @@ $("#support").on("click", function(e){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  //alert("i work");
 	  window.location.href = "simplist.html";
   });
 });
@@ -137,7 +132,6 @@ $("#help").on("click", function(e){
 //if url is not being viewed in Full Screen App Mode, alert users to save to home screen
 if(window.navigator.standalone === false){
   setTimeout(function(){
-    //alert("Add this web app to the home screen of your device for easier access.");
 	alert("Add this app to your home screen to quickly access Simplist!");
   }, 10000);
 }else{
