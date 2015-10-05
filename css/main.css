@@ -29,6 +29,17 @@ h2{
 h3{
   font-weight: 700;
 }
+
+/* links */
+a.footer-text:link,
+a.footer-text:visited{
+	color: #008719;
+}
+a.footer-text:hover,
+a.footer-text:active{
+	color: #007c17;
+	text-decoration: none;
+}
 	
 /* Flatten boostrap */
 .well, .navbar-inner, .popover, .btn, .tooltip, input, select, textarea, pre, .progress, .modal, .add-on, .alert, .table-bordered, .nav>.active>a, .dropdown-menu, .tooltip-inner, .badge, .label, .img-polaroid, a:focus, a:active {
@@ -100,7 +111,6 @@ aside {
 }
 
 /* perks paragraph text*/
-
 .p-desc {
 	padding: 0 20px;
 	font-size: 16px;
@@ -117,7 +127,8 @@ aside {
 footer {
   background-color: #2dc32c;
   color: #008719;
-  padding: 50px 0;
+  padding-top: 60px;
+  padding-bottom: 30px;
   text-align: center;
   font-weight: 700;
 }
