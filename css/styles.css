@@ -48,10 +48,8 @@ ul {
   color: #e5e5e5;
 }
 
-#list li:hover:after {
-  color: #2dc32c;
-}
-
+/*#list li:hover:after
+  color: $primary*/
 .mdl-textfield {
   width: 100%;
   padding-bottom: 0;
