@@ -31,6 +31,13 @@
 </head>
 <body>
 
+<div class="topbar-wrap">
+<div class="topbar-bar">
+	<span>Click <strong>Download</strong> and add the app to your homepage!</span>
+    <a class="closelink" href="#"><i class="fa fa-close"></i></a>
+</div>
+</div>
+
 <div class="wrapper pg-spcr">
   
 <header>
@@ -41,7 +48,7 @@
           <img class="brand-icon" src="imgs/simplist-brand-icon.png" alt="">
           <h3 class="gray-text brand-text"> &nbsp;Simplist</h3>
         </div>
-        <h1>Simplist is a quick, simple, intuitive, and perfect for busy people!</h1>
+        <h1>Simplist is quick, simple, intuitive, and perfect for busy people!</h1>
         <div class="btn btn-color btn-lg">DOWNLOAD</div>
         <div class="btn btn-learn-more">Learn More</div>
         <aside>
@@ -64,22 +71,26 @@
         <h2 class="white-text">A minimalist, clean and easy to use list app.</h2>
       </div>
       <div class="col-sm-3">
-        <i class="fa fa-circle"></i>
+        <!--<i class="fa fa-circle"></i>-->
+        <img src="imgs/icon-easy.svg" alt="" height="100">
         <h3>Easy to use</h3>
         <p class="p-desc">Simple, powerful, and efficient, yet easy to use.</p>
       </div>
       <div class="col-sm-3">
-        <i class="fa fa-circle"></i>
+        <!--<i class="fa fa-circle"></i>-->
+        <img src="imgs/icon-productive.svg" alt="" height="100">
         <h3>Be more productive</h3>
         <p class="p-desc">Intuitive and clean interface design that lets you act fast!</p>
       </div>
       <div class="col-sm-3">
-        <i class="fa fa-circle"></i>
+        <!--<i class="fa fa-circle"></i>-->
+        <img src="imgs/icon-design.svg" alt="" height="100">
         <h3>Beautiful Design</h3>
         <p class="p-desc">A beautiful minimalist design. Just focus on getting things done.</p>
       </div>
       <div class="col-sm-3">
-        <i class="fa fa-circle"></i>
+        <!--<i class="fa fa-circle"></i>-->
+        <img src="imgs/icon-device.svg" alt="" height="100">
         <h3>Web Browser</h3>
         <p class="p-desc">This friendly app is designed to be used on all devices.</p>
       </div>
@@ -112,6 +123,14 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom JavasScript -->
 <script src="js/javascript.js"></script>
-
+<script>
+$(document).ready(function(){
+	//alert("working!");
+	//$(".topbar-bar").show();
+	$(".closelink").on("click", function(){
+		$(".topbar-wrap").slideUp();
+	});
+});
+</script>
 </body>
 </html>

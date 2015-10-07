@@ -230,3 +230,15 @@ h1{
 	margin-top: 50px;
 }
 }
+
+.topbar-wrap{
+	background-color: #2dc32c;
+	color: #FFFFFF;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 2px 2px 8px #afafaf;
+}
+i.fa.fa-close{
+	color: green;
+	float: right;
+}
