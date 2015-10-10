@@ -1,8 +1,9 @@
 @charset "UTF-8";
 /* CSS Document */
 
-*{
+*, *:focus{
 	font-family: 'Lato', sans-serif;
+	outline: 0;
 }
 
 /* colors */
@@ -31,6 +32,13 @@ h3{
 }
 
 /* links */
+a.download-link:link,
+a.download-link:visited,
+a.download-link:hover,
+a.download-link:active{
+	color: #2dc32c;
+}
+
 a.footer-text:link,
 a.footer-text:visited{
 	color: #008719;
@@ -140,6 +148,79 @@ to {
 }
 }
 
+/* Modal Styles */
+button[data-toggle="modal"] {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  outline: none !important;
+  border: none;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-content {
+  border: none;
+  border-radius: 5px;
+}
+
+.tab-content {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+/* moves text down a bit from the tabs */
+/*p {
+  padding: 20px 0;
+}*/
+
+/* removes tabs border radius */
+#tab-container .nav-pills > li > a {
+  border-radius: 0;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs > li > a {
+  border-radius: 4px;
+  background-color: transparent;
+  color: gray;
+}
+
+.nav-tabs > li > a:hover {
+  color: #2dc32c;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  background-color: #2dc32c;
+  color: white;
+}
+
+#x,
+#x:visited,
+#btn-close,
+#btn-close:visited {
+  border: none;
+  background-color: transparent;
+  color: gray;
+}
+
+#x:hover,
+#x:active,
+#btn-close:hover,
+#btn-close:active {
+  color: #2dc32c;
+}
+
 /* icon group */
 aside {
   margin-top: 40px;
@@ -218,6 +299,9 @@ aside{
 h1{
 	text-align:center;
 }
+.nav-tabs > li, .nav-pills > li {
+    float: none;
+  }
 }
 
 @media(min-width:767px){

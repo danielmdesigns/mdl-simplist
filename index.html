@@ -49,8 +49,8 @@
           <h3 class="gray-text brand-text"> &nbsp;Symplist</h3>
         </div>
         <h1>Symplist is quick, simple, intuitive, and perfect for busy people!</h1>
-        <a href="http://www.danielmdesigns.com/simplist/simplist.html" class="btn btn-color btn-lg" target="_blank">DOWNLOAD</a>
-        <div class="btn btn-learn-more">Learn More</div>
+        <a href="http://www.danielmdesigns.com/symplist/symplist.html" class="btn btn-color btn-lg" target="_blank">DOWNLOAD</a>
+        <div class="btn btn-learn-more" data-toggle="modal" data-target="#learnmore">Learn More</div>
         <aside>
           <i class="fa fa-apple"></i>
           <i class="fa fa-android"></i>
@@ -63,6 +63,57 @@
     </div>
   </div>
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="learnmore" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span id="x" aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#getting-started" aria-controls="getting-started" role="tab" data-toggle="tab">Getting Started</a></li>
+          <li role="presentation"><a href="#using-symplist" aria-controls="using-symplist" role="tab" data-toggle="tab">Using Symplist</a></li>
+          <li role="presentation"><a href="#faqs" aria-controls="faqs" role="tab" data-toggle="tab">FAQs</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="getting-started">
+          <h3 class="gray-text"><strong>Getting Started</strong></h3>
+          <p>First you’ll want to click on the <a class="download-link" href="symplist.html">Download</a> button to open the application in a new browser window. Depending on what device you’ve opened the list application on and/or in, below will instruct you on how to  access your lists quickly!</p>
+       	  <p><strong>Desktop:</strong><br> If you’ve clicked the <a class="download-link" href="symplist.html">Download</a> button and opened the application in a new browser window, all you need to do is Bookmark the page, and make it a favorite.</p>
+		  <p><strong>Tablet and/or Phone:</strong><br> Once you click the <a class="download-link" href="symplist.html">Download</a> button to open the application in a new browser window, you’ll want to add the list “page” to your home screen. All devices and manufactures have this feature, however, not all are location in the same place.</p>
+		  <p><a href="http://goo.gl/DoHW78" class="download-link">Click here</a> to learn how you can add Symplist App to your home screen based on your device.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="using-symplist">
+          <h3 class="gray-text"><strong>Using Symplist</strong></h3>
+          <p><strong>How do I create a To-do?</strong><br> On iPhone, iPad, Android, as well as, Mac and Window desktop’s, tap or click the “+” button in the bottom right hand corner. This will provide you with a prompt to enter your item.</p>
+		  <p><strong>How do I remove/delete an To-do?</strong><br> Just tap or click on the list item you want to remove viola, it’s complete!</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="faqs">
+          <h3 class="gray-text"><strong>FAQs</strong></h3>
+          <p><strong>Q: Can I use Symplist on my desktop, mobile, and tablet?</strong><br> A: Of course! You can download the app here for your Mac or Windows desktop, as well as, on any iOS <em>(iPhone & iPad)</em> and Android devices.</p>
+          <p><strong>Q: How can I add the app to my home screen?</strong><br> A: Every device is different so we’ve compiled a list on how to do it based on what type of device you’re using. See those intructions, <a href="http://goo.gl/DoHW78" class="download-link">here</a>.</p>
+          <p><strong>Q: Are you planning on adding new features to Symplist?</strong><br> A: Absolutely! We are very new and currently gathering tons of feedback so we can make sure we start working on whats important to you! You can submit your feedback <a class="download-link" href="mailto:daniel@danielmdesigns.com">here</a></p>
+          <p><strong>Q: How secure is my data with Symplist?</strong><br> A: Symplist currently only utilizes your devices’ localStorage capabilities and you information is not stored, shared, backed up and/or hosted on any databases or web servers by Symplist App.</p>
+          <p><strong>Q: Can I share my list with someone?</strong><br> A: Unfortunately, not at this time.</p>
+          <p><strong>Q: Which web browsers does Symplist support?</strong><br> A: Symplist works with all modern web browsers and recent versions of Chrome, Safari, Firefox, and Internet Explorer.</p>
+          <p><strong>Q: How can I keep update with newest versions of Symplist?</strong><br> A: Go ahead and sign up for our mailing list <a href="http://goo.gl/DoHW78" class="download-link">here</a>, and we’ll let you know when you’re ready to download the most current version of Symplist.</p>
+          <p><strong>Q: I have another question!</strong><br> A: Fantastic! Send us an email at <a href="http://goo.gl/DoHW78" class="download-link">info@symplist.com</a></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button id="btn-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <section id="features">
   <div class="container">
@@ -122,15 +173,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom JavasScript -->
-<script src="js/javascript.js"></script>
-<script>
-$(document).ready(function(){
-	//alert("working!");
-	//$(".topbar-bar").show();
-	$(".closelink").on("click", function(){
-		$(".topbar-wrap").slideUp();
-	});
-});
-</script>
+<script src="js/javascript-marketing.js"></script>
+
 </body>
 </html>
