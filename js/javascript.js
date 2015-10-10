@@ -1,19 +1,16 @@
 $(document).ready(function(){
 "use strict";
-//alert if input left blank
-/*$('#fab').click( function(e){
-   if($('input').val() === ""){
-      e.stopImmediatePropagation();
-      alert('Sorry, but your input can not be left blank.');
-	return false;
-   }
-});*/
- 
 //list logic & browser storage
 //add using "button"
 $("#fab").on("click", function(){
   var $item = prompt("Add new Item");
-  $("ul").append("<li>" + $item + "</li>");
+  if($item === ""){
+	alert('Sorry, but your input can not be left blank.');
+  }else if($item === null){
+	return false;
+  }else{
+  	$("ul").append("<li>" + $item + "</li>");
+  }
     
 //set
 $("#form")[0].reset();
@@ -21,12 +18,6 @@ $("#form")[0].reset();
   localStorage.setItem('list', list);
   return false;
 });
-
-/*$('input').on("keypress", function(e){
-   if(e.keyCode === 13 ){
-       $("button[id='fab']").click();
-   }
-});*/
     
 //shows
 if(localStorage.getItem('list')){
@@ -36,7 +27,6 @@ if(localStorage.getItem('list')){
 //remove
 $("ul").on("click", "li", function (){
     $(this).remove();
-	$("li").unbind("hover");
     var i = $(this).text();
 	// get the current list as a string.
     var currentList = localStorage.getItem('list');
@@ -46,7 +36,7 @@ $("ul").on("click", "li", function (){
     localStorage.setItem('list', newList);
 });
 
-/* SPA */
+/* Supporting Pages */
 $("#developer").on("click", function(){
   $(".mdl-layout__drawer").toggleClass("is-visible");
 });
@@ -71,10 +61,9 @@ $("#report").on("click", function(){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  window.location.href = "simplist.html";
+	  window.location.href = "symplist.html";
   });
 });
-
 //version history
 $("#version").on("click", function(){
   $("#main-page-content").load("version.html");
@@ -96,7 +85,7 @@ $("#version").on("click", function(){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  window.location.href = "simplist.html";
+	  window.location.href = "symplist.html";
   });
 });
 
@@ -121,7 +110,7 @@ $("#support").on("click", function(e){
   });
   $(".mdl-layout__drawer-button i").on("click", function(e){
 	  e.stopImmediatePropagation();
-	  window.location.href = "simplist.html";
+	  window.location.href = "symplist.html";
   });
 });
 
@@ -132,28 +121,10 @@ $("#help").on("click", function(e){
 //if url is not being viewed in Full Screen App Mode, alert users to save to home screen
 if(window.navigator.standalone === false){
   setTimeout(function(){
-	alert("Add this app to your home screen to quickly access Simplist!");
+	alert("Add this app to your home screen to quickly access Symplist!");
   }, 10000);
 }else{
   //NaN
 }
-
-/* ripple button effect */
-$('.btn-color').mousedown(function (e) {
-  var target = e.target;
-  var rect = target.getBoundingClientRect();
-  var ripple = target.querySelector('.ripple');
-  $(ripple).remove();
-  ripple = document.createElement('span');
-  ripple.className = 'ripple';
-  ripple.style.height = ripple.style.width = Math.max(rect.width, rect.height) + 'px';
-  target.appendChild(ripple);
-  var top = e.pageY - rect.top - ripple.offsetHeight / 2 -  document.body.scrollTop;
-  var left = e.pageX - rect.left - ripple.offsetWidth / 2 - document.body.scrollLeft;
-  ripple.style.top = top + 'px';
-  ripple.style.left = left + 'px';
-  return false;
-});
-
 
 });
