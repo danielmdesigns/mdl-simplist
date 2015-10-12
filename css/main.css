@@ -1,13 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
-
 *, *:focus{
 	font-family: 'Lato', sans-serif;
 	outline: 0;
 }
 
 /* colors */
-.white-text {
+.white-text{
 	color:#FFFFFF;
 }
 .gray-text{
@@ -91,7 +90,6 @@ a.footer-text:active{
 }
 .btn-color:hover{
 	color: #FFFFFF;
-	/*background-color: #00b11e;*/
 	box-shadow: 3px 3px 15px #cacaca !important;
 }
 .btn-learn-more {
@@ -104,7 +102,6 @@ a.footer-text:active{
 }
 .ripple {
   position: absolute;
-  /*background: blue;*/
   background: rgba(255,255,255,.25);
   border-radius: 100%;
   transform: scale(0.2);
@@ -171,11 +168,6 @@ button[data-toggle="modal"] {
   padding-top: 30px;
   padding-bottom: 20px;
 }
-
-/* moves text down a bit from the tabs */
-/*p {
-  padding: 20px 0;
-}*/
 
 /* removes tabs border radius */
 #tab-container .nav-pills > li > a {
