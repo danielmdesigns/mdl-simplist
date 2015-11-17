@@ -1,8 +1,11 @@
 $(document).ready(function(){
 "use strict";
 
+//hide the prompt initially
 $("#js-prompt").hide();
 
+//list logic & browser storage
+//show prompt using FAB
 $("#fab").on("click", function(event){
   var $input = $("input");
   $input.val("");
@@ -13,9 +16,12 @@ $("#fab").on("click", function(event){
   $input.focus();
 });
 
+//hide prompt if user cancels
 $("#btn-cancel").on("click", function(){
   $("#js-prompt").hide();
 });
+
+//submit task to list using FAB
 $("#btn-add").on("click", function(){
 var $item = $("input").val();
   if($item === ""){
@@ -34,30 +40,12 @@ var $item = $("input").val();
   
 });
 
+//if enter is pressed, submit task to list
 $('input').on("keypress", function(e){
    if(e.keyCode === 13 ){
        $("#btn-add").click();
    }
 });
-
-//list logic & browser storage
-//add using "button"
-/*$("#fab").on("click", function(){
-  var $item = prompt("Add new Item");
-  if($item === ""){
-	alert('Sorry, but your input can not be left blank.');
-  }else if($item === null){
-	return false;
-  }else{
-  	$("ul").append("<li>" + $item + "</li>");
-  }*/
-    
-//set
-/*$("#form")[0].reset();
-  var list = $('#list').html();
-  localStorage.setItem('list', list);
-  return false;
-});*/
     
 //shows
 if(localStorage.getItem('list')){
