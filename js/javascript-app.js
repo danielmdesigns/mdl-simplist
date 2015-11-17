@@ -1,8 +1,48 @@
 $(document).ready(function(){
 "use strict";
+
+$("#js-prompt").hide();
+
+$("#fab").on("click", function(event){
+  var $input = $("input");
+  $input.val("");
+  $("h4").html("Please add your item");
+  event.preventDefault();
+  event.stopPropagation();
+  $("#js-prompt").show();
+  $input.focus();
+});
+
+$("#btn-cancel").on("click", function(){
+  $("#js-prompt").hide();
+});
+$("#btn-add").on("click", function(){
+var $item = $("input").val();
+  if($item === ""){
+	$("h4").html('Sorry, but your input can not be left blank.');
+  }else if($item === null){
+	return false;
+  }else{
+  	$("ul").append("<li>" + $item + "</li>");
+	$("#js-prompt").hide();
+  }
+  
+  $("#form")[0].reset();
+  var list = $('#list').html();
+  localStorage.setItem('list', list);
+  return false;
+  
+});
+
+$('input').on("keypress", function(e){
+   if(e.keyCode === 13 ){
+       $("#btn-add").click();
+   }
+});
+
 //list logic & browser storage
 //add using "button"
-$("#fab").on("click", function(){
+/*$("#fab").on("click", function(){
   var $item = prompt("Add new Item");
   if($item === ""){
 	alert('Sorry, but your input can not be left blank.');
@@ -10,14 +50,14 @@ $("#fab").on("click", function(){
 	return false;
   }else{
   	$("ul").append("<li>" + $item + "</li>");
-  }
+  }*/
     
 //set
-$("#form")[0].reset();
+/*$("#form")[0].reset();
   var list = $('#list').html();
   localStorage.setItem('list', list);
   return false;
-});
+});*/
     
 //shows
 if(localStorage.getItem('list')){
