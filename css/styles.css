@@ -3,15 +3,9 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-
 .center {
   margin: 0 auto;
 }
-
-/*h4{
-	color: #2dc32c;
-}*/
-
 .mdl-layout__header {
   background-color: #2dc32c;
 }
@@ -23,7 +17,6 @@
   right: 15px;
   z-index: 1;
 }
-
 #fab {
   color: #FFFFFF;
   z-index: 4;
@@ -32,10 +25,8 @@
 /* list */
 ul {
   padding: 0;
-  /*margin-bottom: 75px*/
   margin-bottom: -14px;
 }
-
 #list li {
   border-bottom: 1px solid #e5e5e5;
   color: #333;
@@ -46,46 +37,32 @@ ul {
   background: white;
   cursor: pointer;
 }
-
 #list li:after {
   font-family: FontAwesome;
   content: "\f00c";
   float: right;
   color: #e5e5e5;
 }
-
-/*#list li:hover:after
-  color: $primary*/
 .mdl-textfield {
   width: 100%;
   padding-bottom: 0;
   position: fixed;
   bottom: 0;
 }
-
 .mdl-textfield .mdl-textfield__input {
   padding: 20px 0 16px 20px;
   background-color: #FFFFFF;
   border-width: medium medium 0px;
 }
-
 .mdl-textfield .mdl-textfield__label {
   padding-left: 20px;
   top: 40px;
 }
-
 .mdl-textfield .mdl-textfield__label:after {
   background-color: #2dc32c;
   position: fixed;
   bottom: 0;
 }
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 a:link[class="contact-link"] {
   color: #2dc32c;
   text-decoration: underline;
@@ -96,15 +73,12 @@ a:link[class="contact-link"] {
   width: 90%;
   margin-top: 20px;
 }
-
 .mdl-card {
   min-height: auto;
 }
-
 .mdl-card__supporting-text {
   padding-top: 0;
 }
-
 small {
   margin-left: 20px;
   color: #e5e5e5;
@@ -114,11 +88,9 @@ small {
 .mdl-card {
   width: 90%;
 }
-
 #bug, #support {
   margin-top: 20px;
 }
-
 .mdl-button.mdl-button--colored {
   color: #2dc32c;
 }
@@ -138,7 +110,6 @@ small {
 .prompt-container:closed {
   display: none;
 }
-
 .prompt {
   position: fixed;
   top: 50px;
@@ -152,7 +123,6 @@ small {
   max-width: 100%;
   z-index: 2;
 }
-
 button {
   border: none;
   background-color: transparent;
@@ -167,14 +137,12 @@ button {
 button:hover {
   background-color: #e5e5e5;
 }
-
 input {
   width: 100%;
   outline: none;
   padding: 10px 0;
   margin-bottom: 10px;
 }
-
 button#btn-add,
 button#btn-cancel {
   border: none;
@@ -191,7 +159,6 @@ button#btn-add:hover,
 button#btn-cancel:hover {
   background-color: #e5e5e5;
 }
-
 button#btn-cancel {
   color: #e5e5e5;
 }
