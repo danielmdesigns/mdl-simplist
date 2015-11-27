@@ -150,7 +150,7 @@ $("#help").on("click", function(e){
 if(window.navigator.standalone === false){
   setTimeout(function(){
 	alert("Add this app to your home screen to quickly access Symplist!");
-  }, 10000);
+  }, 60000);
 }else{
   //NaN
 }
