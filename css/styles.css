@@ -19,7 +19,7 @@
 }
 #fab {
   color: #FFFFFF;
-  z-index: 4;
+  z-index: 2;
 }
 
 /* list */
@@ -105,7 +105,7 @@ small {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
 }
 .prompt-container:closed {
   display: none;
@@ -121,7 +121,7 @@ small {
   padding: 40px;
   width: 600px;
   max-width: 100%;
-  z-index: 2;
+  z-index: 4;
 }
 button {
   border: none;
