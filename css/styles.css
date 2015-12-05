@@ -20,6 +20,8 @@
 #fab {
   color: #FFFFFF;
   z-index: 2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* list */
@@ -137,7 +139,7 @@ button {
 button:hover {
   background-color: #e5e5e5;
 }
-input {
+input, input[type=text] {
   width: 100%;
   padding: 10px 0;
   margin-bottom: 10px;
@@ -147,7 +149,7 @@ input {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-input:focus {
+input:focus, input[type=text]:focus {
   border: 1px solid #e5e5e5;
   outline: none;
   -webkit-box-shadow: none;
