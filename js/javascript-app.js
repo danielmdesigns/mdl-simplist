@@ -146,6 +146,14 @@ $("#help").on("click", function(e){
   e.stopImmediatePropagation();
 });
 
+$("#demo-menu-lower-right").on("click", function(){
+	$(".mdl-ripple").addClass("show");
+	setTimeout(function(){
+		//alert("set time out");
+		$(".mdl-ripple").removeClass("show");
+	}, 1500);
+});
+
 //if url is not being viewed in Full Screen App Mode, alert users to save to home screen
 if(window.navigator.standalone === false){
   setTimeout(function(){

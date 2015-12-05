@@ -10,6 +10,13 @@
   background-color: #2dc32c;
 }
 
+.mdl-ripple{
+	display: none;
+	border: 1px solid hotpink;
+}
+
+.show{display:inherit;}
+
 /* fab button */
 .mdl-button--fab {
   position: fixed;
