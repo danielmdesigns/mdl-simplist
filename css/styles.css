@@ -78,6 +78,9 @@ a:link[class="contact-link"] {
 }
 
 /* version history*/
+article:last-child{
+	margin-bottom: 20px;
+}
 .demo-card-square.mdl-card {
   width: 90%;
   margin-top: 20px;
