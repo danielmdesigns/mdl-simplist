@@ -139,21 +139,28 @@ button {
 button:hover {
   background-color: #e5e5e5;
 }
-input, input[type=text] {
+input,
+input[type=text] {
   width: 100%;
   padding: 10px 0;
   margin-bottom: 10px;
   outline: none;
+  background-color: #ffffff;
   border: 1px solid #e5e5e5;
-  border-radius: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-border-radius: none;
+  border-radius: 0;
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  -webkit-appearance: none;
 }
-input:focus, input[type=text]:focus {
+input:focus,
+input[type=text]:focus {
+  background-color: #ffffff;
   border: 1px solid #e5e5e5;
   outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  -webkit-appearance: none;
 }
 button#btn-add,
 button#btn-cancel,
