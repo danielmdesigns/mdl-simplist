@@ -6,6 +6,7 @@ $(".closelink").on("click", function(){
 });
 
 /* ripple button effect */
+/* NOTE: ripple needs to be remove'd after click */
 $('.btn-color').mousedown(function (e) {
   var target = e.target;
   var rect = target.getBoundingClientRect();
