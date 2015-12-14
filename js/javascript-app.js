@@ -2,7 +2,7 @@ $(document).ready(function(){
 "use strict";
 
 //hide the prompt initially
-$("#js-prompt").hide();
+$("#js-item-prompt").hide();
 
 //list logic & browser storage
 //show prompt using FAB
@@ -12,13 +12,13 @@ $("#fab").on("click", function(event){
   $("h4").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-prompt").show();
+  $("#js-item-prompt").show();
   $input.focus();
 });
 
 //hide prompt if user cancels
 $("#btn-cancel").on("click", function(){
-  $("#js-prompt").hide();
+  $("#js-item-prompt").hide();
 });
 
 //submit task to list using FAB
@@ -30,7 +30,7 @@ var $item = $("input").val();
 	return false;
   }else{
   	$("ul").append("<li>" + $item + "</li>");
-	$("#js-prompt").hide();
+	$("#js-item-prompt").hide();
   }
   
   $("#form")[0].reset();
@@ -154,13 +154,18 @@ $("#demo-menu-lower-right").on("click", function(){
 	}, 1500);
 });
 
+$("#js-reminder-alert").hide();
 //if url is not being viewed in Full Screen App Mode, alert users to save to home screen
 if(window.navigator.standalone === false){
   setTimeout(function(){
-	alert("Add this app to your home screen to quickly access Symplist!");
+	$("#js-reminder-alert").show();
+	//alert("Add this app to your home screen to quickly access Symplist!");
   }, 100000);
 }else{
   //NaN
 }
+$("#btn-gotit").on("click", function(){
+	$("#js-reminder-alert").hide();
+});
 
 });
