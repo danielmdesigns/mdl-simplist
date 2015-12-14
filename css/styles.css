@@ -3,6 +3,7 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
 .center {
   margin: 0 auto;
 }
@@ -174,8 +175,10 @@ input[type=text]:focus {
 }
 button#btn-add,
 button#btn-cancel,
+button#btn-gotit,
 button#btn-add:focus,
-button#btn-cancel:focus {
+button#btn-cancel:focus,
+button#btn-gotit:focus {
   border: none;
   background-color: transparent;
   font-weight: bold;
@@ -187,7 +190,8 @@ button#btn-cancel:focus {
   float: right;
 }
 button#btn-add:hover,
-button#btn-cancel:hover {
+button#btn-cancel:hover,
+button#btn-gotit:hover {
   background-color: #e5e5e5;
 }
 button#btn-cancel {
