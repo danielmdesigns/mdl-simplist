@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-font-family: "FixFont";
-src: url();
-}
-
 .center {
   margin: 0 auto;
 }
@@ -31,7 +26,6 @@ src: url();
   z-index: 1;
 }
 #fab {
-  font-family: "FixFont";
   color: #FFFFFF;
   z-index: 2;
   -webkit-backface-visibility: hidden;
