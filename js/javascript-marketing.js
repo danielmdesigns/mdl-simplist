@@ -6,7 +6,6 @@ $(".closelink").on("click", function(){
 });
 
 /* ripple button effect */
-/* NOTE: ripple needs to be remove'd after click */
 $('.btn-color').mousedown(function (e) {
   var target = e.target;
   var rect = target.getBoundingClientRect();
@@ -22,5 +21,16 @@ $('.btn-color').mousedown(function (e) {
   ripple.style.left = left + 'px';
   return false;
 });
+
+/*remove ripple on smaller screens after animatino runs*/
+if($(window).width() <= 766){
+  $(".btn-color").on(
+	"transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
+	function() {
+	  $(this).removeClass("ripple");
+	  window.location.reload();
+	}
+  );
+}
 
 });
