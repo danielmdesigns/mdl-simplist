@@ -4,6 +4,19 @@ $(document).ready(function(){
 //hide the prompt initially
 $("#js-item-prompt").hide();
 
+//empty state screen test
+window.onunload = unloadPage;
+function unloadPage(){
+  //alert("unload event detected!");
+  if($("ul li").length === 0){
+	  $(".empty").show();
+  }else if($("ul li").length >= 1){
+	  $(".empty").hide();
+  }else{
+	  $(".empty").hide();
+  }
+}
+
 //list logic & browser storage
 //show prompt using FAB
 $("#fab").on("click", function(event){
@@ -29,8 +42,9 @@ var $item = $("input").val();
   }else if($item === null){
 	return false;
   }else{
-  	$("ul").append("<li>" + $item + "</li>");
+	$("ul").append("<li>" + $item + "</li>");
 	$("#js-item-prompt").hide();
+	$(".empty").hide();
   }
   
   $("#form")[0].reset();
@@ -44,12 +58,20 @@ var $item = $("input").val();
 $('input').on("keypress", function(e){
    if(e.keyCode === 13 ){
        $("#btn-add").click();
+	   $("input").blur();
    }
 });
-    
+
 //shows
 if(localStorage.getItem('list')){
   $('#list').html(localStorage.getItem('list'));
+  if($("ul li").length === 0){
+	$(".empty").show();
+}else if($("ul li").length >= 1){
+	$(".empty").hide();
+}else{
+	$(".empty").hide();
+}
 }
     
 //remove
@@ -62,6 +84,13 @@ $("ul").on("click", "li", function (){
     var newList = currentList.replace('<li>' + i + '</li>', '');
 	// update the localStorage with the new list
     localStorage.setItem('list', newList);
+	if($("ul li").length === 0){
+		$(".empty").show();
+	}else if($("ul li").length >= 1){
+		$(".empty").hide();
+	}else{
+		$(".empty").hide();
+	}
 });
 
 /* Supporting Pages */
