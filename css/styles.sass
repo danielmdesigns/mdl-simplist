@@ -2,13 +2,14 @@ $primary: #2dc32c
 $accent: #ff4081
 $gray: #e5e5e5
 $white: #FFFFFF
+$black: #666666
 
 *
   list-style: none
   text-decoration: none
 
 .center
-    margin:0 auto
+    margin: 0 auto
 
 .mdl-layout__header
   background-color: $primary
@@ -22,11 +23,28 @@ $white: #FFFFFF
   
 #fab
   color: $white
+  
+/*empty state*/
+form > .empty
+	display: none
+	margin: 50px auto
+	text-align: center
+	.empty_image
+		text-align: center
+		width: 100%
+		max-width: 200px
+		margin-bottom: 10px
+h4,
+h5
+	color: $black
+h5
+	font-family: "Roboto","Helvetica","Arial",sans-serif
+	font-weight: 400
+	font-size: 25pxd
 
 /* list */
 ul
   padding: 0
-  /*margin-bottom: 75px*/
   margin-bottom: -14px
 
 #list li
@@ -95,3 +113,93 @@ small
     margin-top: 20px
 .mdl-button.mdl-button--colored
     color: $primary
+	
+/* custom prompt */
+.prompt-container:before
+  content: ""
+  background-color: rgba(0, 0, 0, 0.6)
+  display: block
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 3
+  
+.prompt-container:closed
+  display: none
+
+.prompt
+  position: fixed
+  top: 50px
+  left: 0px
+  right: 0px
+  margin: 0 auto
+  display: block
+  background: $white
+  padding: 40px
+  max-width: 600%
+  z-index: 4
+
+button
+  border: none
+  background-color: transparent
+  font-weight: bold
+  font-size: 14px
+  padding: 15px
+  cursor: pointer
+  float: right
+  outline: none
+  
+button:hover
+  background-color: $gray
+  
+input,
+input[type=text]
+  width: 100%
+  padding: 10px 0
+  margin-bottom: 10px
+  outline: none
+  background-color: $white
+  border: 1px solid $gray
+  -webkit-border-radius: none
+  border-radius: 0
+  -webkit-box-shadow: 0
+  box-shadow: 0
+  -webkit-appearance: none
+
+input:focus,
+input[type=text]:focus
+  background-color: $white
+  border: 1px solid $gray
+  outline: none
+  -webkit-box-shadow: 0
+  box-shadow: 0
+  -webkit-appearance: none
+
+button#btn-add,
+button#btn-cancel,
+button#btn-gotit,
+button#btn-add:focus,
+button#btn-cancel:focus,
+button#btn-gotit:focus
+  border: none
+  background-color: transparent
+  font-weight: bold
+  color: rgb(255,64,129)
+  font-size: 14px
+  padding: 15px
+  cursor: pointer
+  outline: none
+  float: right
+  
+button#btn-add:hover,
+button#btn-cancel:hover,
+button#btn-gotit:hover 
+  background-color: $gray
+  
+button#btn-cancel
+  color: $gray
+  
+button#btn-cancel:hover
+  background-color: transparent
