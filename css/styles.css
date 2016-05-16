@@ -167,7 +167,7 @@ small {
   display: block;
   background: #FFFFFF;
   padding: 40px;
-  max-width: 600%;
+  max-width: 600px;
   z-index: 4;
 }
 
