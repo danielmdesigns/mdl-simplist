@@ -1,7 +1,26 @@
 $(document).ready(function(){
 "use strict";
 
-//hide the prompt initially
+//REMOVE SHADOW ON LIST IF NO LIST
+//if($("li").is(":visible")){
+//	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+//}else{
+//	$("ul").css("box-shadow","");
+//}
+	
+//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
+if($("ul li").length === 0){
+	$(".empty").show();
+	$("#list").css("box-shadow","");
+}else if($("ul li").length >= 1){
+	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}else{
+	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}
+	
+//hide prompts initially
 $("#js-item-prompt").hide();
 
 //empty state screen test
@@ -9,21 +28,17 @@ window.onunload = unloadPage;
 function unloadPage(){
   //alert("unload event detected!");
   if($("ul li").length === 0){
-	  $(".empty").show();
-		//$("ul").removeClass("list--shadow");
-  }else if($("ul li").length >= 1){
-	  $(".empty").hide();
-  }else{
-	  $(".empty").hide();
-  }
+		$(".empty").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
 }
-	
-if($("ul#list").children("li").length === 0){
-	$("ul#list").css("box-shadow","");
-}else{
 
-}
-	
 //list logic & browser storage
 //show prompt using FAB
 $("#fab").on("click", function(event){
@@ -50,10 +65,22 @@ var $item = $("input").val();
 		return false;
   }else{
 		$("ul").append("<li>" + $item + "</li>");
+		
+		if($("ul li").length === 0){
+		$(".empty").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
+		
 		$("#js-item-prompt").hide();
 		$(".empty").hide();
   }
-  
+	
   $("#form")[0].reset();
   var list = $('#list').html();
   localStorage.setItem('list', list);
@@ -70,34 +97,47 @@ $('input').on("keypress", function(e){
 });
 
 //shows
-if(localStorage.getItem('list')){
+if(localStorage.getItem('list')){	
   $('#list').html(localStorage.getItem('list'));
-  if($("ul li").length === 0){//////
+	
+  if($("ul li").length === 0){
 	$(".empty").show();
+	$("#list").css("box-shadow","");
 }else if($("ul li").length >= 1){
 	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }else{
 	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }
+	
 }
     
 //remove
-$("ul").on("click", "li", function (){
+$("ul").on("click", "li", function(){
     $(this).remove();
     var i = $(this).text();
-	// get the current list as a string.
+		
+		//GET CURRENT LIST AS A STRING
     var currentList = localStorage.getItem('list');
-	// replace the clicked item with a blank string.
+	
+		//REPLACE THE CLICKED ITEM WITH A BLANK STRING
     var newList = currentList.replace('<li>' + i + '</li>', '');
-	// update the localStorage with the new list
+	
+		//UPDATE LOCALSTORAGE WITH UPDATED LIST
     localStorage.setItem('list', newList);
-	if($("ul li").length === 0){
-		$(".empty").show();
-	}else if($("ul li").length >= 1){
-		$(".empty").hide();
-	}else{
-		$(".empty").hide();
-	}
+		
+		if($("ul li").length === 0){
+	$(".empty").show();
+	$("#list").css("box-shadow","");
+}else if($("ul li").length >= 1){
+	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}else{
+	$(".empty").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}
+		
 });
 
 /* Supporting Pages */
