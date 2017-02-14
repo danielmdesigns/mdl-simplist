@@ -2,7 +2,10 @@ $primary: #2dc32c
 $accent: #ff4081
 $gray: #e5e5e5
 $white: #FFFFFF
-$black: #666666
+$black: #444444
+
+$green: #87DB48
+$drkgreen: #5CA724
 
 *
 	list-style: none
@@ -43,19 +46,29 @@ h5
 	font-size: 25pxd
 
 /* list */
-ul
-	padding: 0
-	margin-bottom: -14px
+//ul
+//	padding: 0
+//	margin-bottom: -14px
+
+/*START NEW CHANGES*/
+ul#list
+	padding: 1px
+	margin: 10px
+	box-shadow: 0 0 10px 0 lightgrey
+	border-radius: 5px
+/*END NEW CHANGES*/
 
 #list li
 	border-bottom: 1px solid $gray
 	color: #333
-	padding: 16px 20px 20px 20px
+	padding: 16px
 	display: block
 	font-size: 16px
 	overflow: hidden
 	background: white
 	cursor: pointer
+	&:last-of-type
+		border: none
 	&:after
 		font-family: FontAwesome
 		content: "\f00c"
