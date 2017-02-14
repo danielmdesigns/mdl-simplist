@@ -6,10 +6,16 @@ $black: #444444
 
 $green: #87DB48
 $drkgreen: #5CA724
+$lightgray: #FAFAFA
 
 *
 	list-style: none
 	text-decoration: none
+
+body
+	background-color: $lightgray
+	font-family: "Roboto","Helvetica","Arial",sans-serif
+	font-weight: 100
 
 .center
 	margin: 0 auto
@@ -17,6 +23,32 @@ $drkgreen: #5CA724
 .mdl-layout__header
 	background-color: $primary
   
+
+/*START NEW CHANGES*/
+.sfab
+	position: fixed
+	bottom: 15px
+	right: 15px
+	z-index: 1
+	color: $white
+	background-color: $green
+	border-radius: 50%
+	font-size: 24px
+	height: 56px
+	margin: auto
+	min-width: 56px
+	width: 56px
+	padding: 0
+	overflow: hidden
+	box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24)
+	line-height: normal
+	cursor: pointer
+	transition: background-color 0.35s ease
+	&:hover
+		background-color: darken($green, 5%)
+/*END NEW CHANGES*/
+
+
 /* fab button */
 .mdl-button--fab
 	position: fixed
@@ -54,16 +86,17 @@ h5
 ul#list
 	padding: 1px
 	margin: 10px
-	box-shadow: 0 0 10px 0 lightgrey
+	box-shadow: 0 0 10px 0 rgba(0,0,0,0.1)
 	border-radius: 5px
 /*END NEW CHANGES*/
 
 #list li
 	border-bottom: 1px solid $gray
-	color: #333
+	color: $black
 	padding: 16px
 	display: block
 	font-size: 16px
+	font-weight: 300
 	overflow: hidden
 	background: white
 	cursor: pointer
