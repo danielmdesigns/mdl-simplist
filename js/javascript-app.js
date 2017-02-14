@@ -38,13 +38,13 @@ $("#btn-cancel").on("click", function(){
 $("#btn-add").on("click", function(){
 var $item = $("input").val();
   if($item === ""){
-	$("h4").html('Sorry, but your input can not be left blank.');
+		$("h4").html('Sorry, but your input can not be left blank.');
   }else if($item === null){
-	return false;
+		return false;
   }else{
-	$("ul").append("<li>" + $item + "</li>");
-	$("#js-item-prompt").hide();
-	$(".empty").hide();
+		$("ul").append("<li>" + $item + "</li>");
+		$("#js-item-prompt").hide();
+		$(".empty").hide();
   }
   
   $("#form")[0].reset();
@@ -57,7 +57,7 @@ var $item = $("input").val();
 //if enter is pressed, submit task to list
 $('input').on("keypress", function(e){
    if(e.keyCode === 13 ){
-       $("#btn-add").click();
+     $("#btn-add").click();
 	   $("input").blur();
    }
 });
