@@ -2,7 +2,7 @@ $(document).ready(function(){
 "use strict";
 
 //hide the prompt initially
-$("#js-item-prompt").hide();
+//$("#js-item-prompt").hide();
 
 //empty state screen test
 window.onunload = unloadPage;
@@ -65,7 +65,7 @@ $('input').on("keypress", function(e){
 //shows
 if(localStorage.getItem('list')){
   $('#list').html(localStorage.getItem('list'));
-  if($("ul li").length === 0){
+  if($("ul li").length === 0){//////
 	$(".empty").show();
 }else if($("ul li").length >= 1){
 	$(".empty").hide();

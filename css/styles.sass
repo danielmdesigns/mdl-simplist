@@ -168,7 +168,7 @@ small
 /* custom prompt */
 .prompt-container:before
 	content: ""
-	background-color: rgba(0, 0, 0, 0.6)
+	background-color: rgba(0, 0, 0, 0.2)
 	display: block
 	position: fixed
 	top: 0
@@ -182,28 +182,38 @@ small
 
 .prompt
 	position: fixed
-	top: 50px
-	left: 0px
-	right: 0px
+	top: 70px
+	left: 15px
+	right: 15px
 	margin: 0 auto
 	display: block
 	background: $white
-	padding: 40px
+	padding: 20px 40px
 	max-width: 600px
+	border-radius: 4px
+	text-align: center
 	z-index: 4
+	box-shadow: 0 0 20px rgba(0,0,0,0.2)
+	h4
+		color: $black
+		font-weight: 300
 
 button
 	border: none
 	background-color: transparent
-	font-weight: bold
+	font-weight: 200
 	font-size: 14px
 	padding: 15px
 	cursor: pointer
 	float: right
 	outline: none
-  
-button:hover
-	background-color: $gray
+	&:hover
+		background-color: transparent
+	&.btn-add
+		color: $green
+		font-weight: 700
+	&.btn-cancel
+		color: $gray
   
 input,
 input[type=text]
@@ -228,35 +238,55 @@ input[type=text]:focus
 	box-shadow: 0
 	-webkit-appearance: none
 
-button#btn-add,
-button#btn-cancel,
-button#btn-gotit,
-button#btn-add:focus,
-button#btn-cancel:focus,
-button#btn-gotit:focus
-	border: none
-	background-color: transparent
-	font-weight: bold
-	color: rgb(255,64,129)
-	font-size: 14px
-	padding: 15px
-	cursor: pointer
-	outline: none
-	float: right
-  
-button#btn-add:hover,
-button#btn-cancel:hover,
-button#btn-gotit:hover 
-	background-color: $gray
-  
-button#btn-cancel
-	color: $gray
-  
-button#btn-cancel:hover
-	background-color: transparent
+//.btn-add
+//	color: $green
+//	font-weight: 500
 
+//.btn
+//	border: none
+//	background-color: transparent
+//	font-size: 14px
+//	padding: 15px
+//	cursor: pointer
+//	outline: none
+//	float: right
+//	.add
+//		font-weight: 400
+//		color: $green
+//	.cancel
+//		font-weight: 200
+//		color: $gray
 
+//button#btn-add,
+//button#btn-cancel,
+//button#btn-gotit,
+//button#btn-add:focus,
+//button#btn-cancel:focus,
+//button#btn-gotit:focus
+//	border: none
+//	background-color: transparent
+//	font-weight: 300	
+//	color: rgb(255,64,129)
+//	font-size: 14px
+//	padding: 15px
+//	cursor: pointer
+//	outline: none
+//	float: right
+  
+//button#btn-add:hover,
+//button#btn-cancel:hover,
+//button#btn-gotit:hover 
+//	background-color: $gray
+  
+//button#btn-cancel
+//	color: $gray
+  
+//button#btn-cancel:hover
+//	background-color: transparent
 
 .hide
 	display: none !important
 	opacity: 0 !important
+
+.blur
+	filter: blur(2px)
