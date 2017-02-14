@@ -2,7 +2,7 @@ $(document).ready(function(){
 "use strict";
 
 //hide the prompt initially
-//$("#js-item-prompt").hide();
+$("#js-item-prompt").hide();
 
 //empty state screen test
 window.onunload = unloadPage;
@@ -10,13 +10,20 @@ function unloadPage(){
   //alert("unload event detected!");
   if($("ul li").length === 0){
 	  $(".empty").show();
+		//$("ul").removeClass("list--shadow");
   }else if($("ul li").length >= 1){
 	  $(".empty").hide();
   }else{
 	  $(".empty").hide();
   }
 }
+	
+if($("ul#list").children("li").length === 0){
+	$("ul#list").css("box-shadow","");
+}else{
 
+}
+	
 //list logic & browser storage
 //show prompt using FAB
 $("#fab").on("click", function(event){
