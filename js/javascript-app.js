@@ -20,10 +20,11 @@ if($("ul li").length === 0){
 	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }
 	
-//hide prompts initially
+	
+//HIDE PROMPTS ONLOAD
 $("#js-item-prompt").hide();
 
-//empty state screen test
+//TEST FOR EMPTY STATE
 window.onunload = unloadPage;
 function unloadPage(){
   //alert("unload event detected!");
