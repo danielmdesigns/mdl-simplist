@@ -40,26 +40,43 @@ function unloadPage(){
 	}
 }
 
-//list logic & browser storage
-//show prompt using FAB
+	
+	
+//***** LIST LOGIC && BROWSER STORAGE *****//
+	
+	
+	
+//SHOW PROMPT WHEN ON FAB TAP/CLICK
 $("#fab").on("click", function(event){
   var $input = $("input");
   $input.val("");
   $("h4").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
+	//$(".prompt").addClass('animated zoomIn');
+	//$(".prompt").addClass('animated rubberBand');
+	//$(".prompt").addClass('animated tada');
+	//$(".prompt").addClass('animated jello');
+	$(".prompt").addClass('animated bounceIn');
+	//$(".prompt").addClass('animated slideInDown');
+	//$(".prompt").addClass('animated zoomIn');
   $("#js-item-prompt").show();
   $input.focus();
 });
 
-//hide prompt if user cancels
-$("#btn-cancel").on("click", function(){
-  $("#js-item-prompt").hide();
-});
+	//HIDE PROMPT IF USER CANCELS
+	$("#btn-cancel").on("click", function(){
+		$(".prompt").addClass('animated bounceOut');
+		setTimeout(function() { 
+			$('.prompt').removeClass('animated bounceOut');
+			$("#js-item-prompt").hide();
+		}, 600);
+	//$("#js-item-prompt").hide();
+	});
 
-//submit task to list using FAB
+//SUBMIT TASK TO LIST ON FAB TAP/CLICK
 $("#btn-add").on("click", function(){
-var $item = $("input").val();
+	var $item = $("input").val();
   if($item === ""){
 		$("h4").html('Sorry, but your input can not be left blank.');
   }else if($item === null){
@@ -67,7 +84,7 @@ var $item = $("input").val();
   }else{
 		$("ul").append("<li>" + $item + "</li>");
 		
-		if($("ul li").length === 0){
+	if($("ul li").length === 0){
 		$(".empty").show();
 		$("#list").css("box-shadow","");
 	}else if($("ul li").length >= 1){
@@ -78,9 +95,15 @@ var $item = $("input").val();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 		
+	$(".prompt").addClass('animated bounceOut');
+	setTimeout(function(){ 
+		$('.prompt').removeClass('animated bounceOut');
 		$("#js-item-prompt").hide();
-		$(".empty").hide();
+	}, 600);
+	$(".empty").hide();
   }
+	
+	//$("#js-item-prompt").hide();
 	
   $("#form")[0].reset();
   var list = $('#list').html();
@@ -89,59 +112,61 @@ var $item = $("input").val();
   
 });
 
-//if enter is pressed, submit task to list
+//SUBMIT TASK ON ENTER KEYPRESS
 $('input').on("keypress", function(e){
-   if(e.keyCode === 13 ){
-     $("#btn-add").click();
-	   $("input").blur();
-   }
+	if(e.keyCode === 13 ){
+	 $("#btn-add").click();
+	 $("input").blur();
+	}
 });
 
-//shows
+//SHOW LIST
 if(localStorage.getItem('list')){	
   $('#list').html(localStorage.getItem('list'));
-	
   if($("ul li").length === 0){
-	$(".empty").show();
-	$("#list").css("box-shadow","");
-}else if($("ul li").length >= 1){
-	$(".empty").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}else{
-	$(".empty").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}
-	
+		$(".empty").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
 }
     
-//remove
+//REMOVE LIST ITEM
 $("ul").on("click", "li", function(){
-    $(this).remove();
-    var i = $(this).text();
-		
-		//GET CURRENT LIST AS A STRING
-    var currentList = localStorage.getItem('list');
-	
-		//REPLACE THE CLICKED ITEM WITH A BLANK STRING
-    var newList = currentList.replace('<li>' + i + '</li>', '');
-	
-		//UPDATE LOCALSTORAGE WITH UPDATED LIST
-    localStorage.setItem('list', newList);
-		
-		if($("ul li").length === 0){
-	$(".empty").show();
-	$("#list").css("box-shadow","");
-}else if($("ul li").length >= 1){
-	$(".empty").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}else{
-	$(".empty").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}
+	$(this).remove();
+	var i = $(this).text();
+
+	//GET CURRENT LIST AS A STRING
+	var currentList = localStorage.getItem('list');
+
+	//REPLACE THE CLICKED ITEM WITH A BLANK STRING
+	var newList = currentList.replace('<li>' + i + '</li>', '');
+
+	//UPDATE LOCALSTORAGE WITH UPDATED LIST
+	localStorage.setItem('list', newList);
+
+	if($("ul li").length === 0){
+		$(".empty").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".empty").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
 		
 });
 
-/* Supporting Pages */
+	
+//***** SUPPORTING PAGES *****//
+	
+	
+	
 $("#developer").on("click", function(){
   $(".mdl-layout__drawer").toggleClass("is-visible");
 });
