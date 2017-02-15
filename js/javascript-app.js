@@ -8,6 +8,14 @@ $(document).ready(function(){
 //	$("ul").css("box-shadow","");
 //}
 	
+	
+//ADD BOUNCE OUT ANIMATION CLASS
+//$(".prompt").addClass('bounceOut');
+//setTimeout(function() { 
+//	$('.prompt').removeClass('bounceOut');
+//	$("#js-item-prompt").hide();
+//}, 600);
+	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 if($("ul li").length === 0){
 	$(".empty").show();
@@ -53,25 +61,19 @@ $("#fab").on("click", function(event){
   $("h4").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-	//$(".prompt").addClass('animated zoomIn');
-	//$(".prompt").addClass('animated rubberBand');
-	//$(".prompt").addClass('animated tada');
-	//$(".prompt").addClass('animated jello');
-	$(".prompt").addClass('animated bounceIn');
-	//$(".prompt").addClass('animated slideInDown');
-	//$(".prompt").addClass('animated zoomIn');
+	$(".prompt").addClass('bounceIn');
   $("#js-item-prompt").show();
   $input.focus();
 });
 
 	//HIDE PROMPT IF USER CANCELS
 	$("#btn-cancel").on("click", function(){
-		$(".prompt").addClass('animated bounceOut');
-		setTimeout(function() { 
-			$('.prompt').removeClass('animated bounceOut');
-			$("#js-item-prompt").hide();
-		}, 600);
-	//$("#js-item-prompt").hide();
+//		$(".prompt").addClass('bounceOut');
+//		setTimeout(function() { 
+//			$('.prompt').removeClass('bounceOut');
+//			$("#js-item-prompt").hide();
+//		}, 600);
+	$("#js-item-prompt").hide();
 	});
 
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
@@ -95,15 +97,16 @@ $("#btn-add").on("click", function(){
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 		
-	$(".prompt").addClass('animated bounceOut');
-	setTimeout(function(){ 
-		$('.prompt').removeClass('animated bounceOut');
-		$("#js-item-prompt").hide();
-	}, 600);
-	$(".empty").hide();
-  }
+//		$(".prompt").addClass('bounceOut');
+//		setTimeout(function(){ 
+//			$('.prompt').removeClass('bounceOut');
+//			$("#js-item-prompt").hide();
+//		}, 600);
+		
+			$(".empty").hide();
+		}
 	
-	//$("#js-item-prompt").hide();
+	$("#js-item-prompt").hide();
 	
   $("#form")[0].reset();
   var list = $('#list').html();
@@ -174,8 +177,6 @@ $("ul").on("click", "li", function(){
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
 		$('nav').toggleClass('open');
-		$('main').toggleClass('back').toggleClass("blur");
- 
 	});
 });
 	

@@ -9,6 +9,8 @@ $drkgreen: #5CA724
 $lightgray: #FAFAFA
 
 *
+	margin: 0
+	padding: 0
 	list-style: none
 	text-decoration: none
 
@@ -19,9 +21,6 @@ body
 
 .center
 	margin: 0 auto
-
-.mdl-layout__header
-	background-color: $primary
   
 
 /*START NEW CHANGES*/
@@ -52,20 +51,12 @@ body
 		background-color: darken($green, 5%)
 	&:active
 		transform: scale(0.9)
-/*END NEW CHANGES*/
 
-
-/* fab button */
-//.mdl-button--fab
-//	position: fixed
-//	bottom: 15px
-//	right: 15px
-//	z-index: 1
   
 #fab
 	color: $white
   
-/*empty state*/
+/* EMPTY STATE */
 form > .empty
 	//display: none
 	margin: 50px auto
@@ -76,19 +67,15 @@ form > .empty
 		max-width: 200px
 		margin-bottom: 10px
 	
-h4, h5
+h4
+	padding: 20px
 	color: $black
-h5
-	font-family: "Roboto","Helvetica","Arial",sans-serif
-	font-weight: 400
-	font-size: 25pxd
+	font-weight: 300
+	font-size: 24px
 
-/* list */
-//ul
-//	padding: 0
-//	margin-bottom: -14px
 
-/*START NEW CHANGES*/
+
+
 ul#list
 	position: relative
 	padding: 1px
@@ -96,7 +83,6 @@ ul#list
 	border-radius: 5px
 	z-index: 1
 	//box-shadow: 0 0 20px 0 rgba(0,0,0,0.15)
-/*END NEW CHANGES*/
 	
 
 #list li
@@ -112,63 +98,21 @@ ul#list
 	&:last-of-type
 		border: none
 	&:after
-		font-family: FontAwesome
-		content: "\f1db"
-		font-size: 10px
+		//font-family: FontAwesome
+		//content: "\f1db"
+		content: "⚬"
+		font-size: 20px
 		float: right
 		color: $gray
   
-/*#list li:hover:after
-  color: $primary*/
-  
-.mdl-textfield
-	width: 100%
-	padding-bottom: 0
-	position: fixed
-	bottom: 0
-	.mdl-textfield__input
-		padding: 20px 0 16px 20px
-		background-color: $white
-		border-width: medium medium 0px
-	.mdl-textfield__label
-		padding-left: 20px
-		top: 40px
-	.mdl-textfield__label:after
-		background-color: $primary
-		position: fixed
-		bottom: 0
   
 footer
 	position: fixed
 	bottom: 0
 	width: 100%
   
-a:link[class="contact-link"]
-	color: $primary
-	text-decoration: underline
 
-/* version history*/
-.demo-card-square.mdl-card
-	width: 90%
-	margin-top: 20px
 
-.demo-card-square > .mdl-card__title
-.mdl-card
-	min-height: auto
-.mdl-card__supporting-text
-	padding-top: 0
-
-small
-	margin-left: 20px
-	color: $gray
-
-/* report an issue */
-.mdl-card
-	width: 90%
-#bug, #support
-	margin-top: 20px
-.mdl-button.mdl-button--colored
-	color: $primary
 	
 /* custom prompt */
 .prompt-container:before
@@ -181,10 +125,11 @@ small
 	bottom: 0
 	right: 0
 	z-index: 1
-  
+	
 .prompt-container:closed
 	display: none
 
+	
 .prompt
 	position: fixed
 	top: 70px
@@ -199,9 +144,10 @@ small
 	text-align: center
 	z-index: 1
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
-	h4
-		color: $black
-		font-weight: 300
+
+		
+		
+		
 
 button
 	border: none
@@ -243,56 +189,53 @@ input[type=text]:focus
 	box-shadow: 0
 	-webkit-appearance: none
 
-//.btn-add
-//	color: $green
-//	font-weight: 500
-
-//.btn
-//	border: none
-//	background-color: transparent
-//	font-size: 14px
-//	padding: 15px
-//	cursor: pointer
-//	outline: none
-//	float: right
-//	.add
-//		font-weight: 400
-//		color: $green
-//	.cancel
-//		font-weight: 200
-//		color: $gray
-
-//button#btn-add,
-//button#btn-cancel,
-//button#btn-gotit,
-//button#btn-add:focus,
-//button#btn-cancel:focus,
-//button#btn-gotit:focus
-//	border: none
-//	background-color: transparent
-//	font-weight: 300	
-//	color: rgb(255,64,129)
-//	font-size: 14px
-//	padding: 15px
-//	cursor: pointer
-//	outline: none
-//	float: right
-  
-//button#btn-add:hover,
-//button#btn-cancel:hover,
-//button#btn-gotit:hover 
-//	background-color: $gray
-  
-//button#btn-cancel
-//	color: $gray
-  
-//button#btn-cancel:hover
-//	background-color: transparent
 
 
 
 
 
+.bounceIn
+	opacity: 0
+	animation-name: bounceIn
+	animation-duration: 300ms
+	animation-timing-function: linear
+	animation-fill-mode: forwards
+@keyframes bounceIn
+	0%
+		opacity: 0
+		transform: scale(0.3) translate3d(0,0,0)
+	50%
+		opacity: 0.9
+		transform: scale(1.1)
+	80%
+		opacity: 1
+		transform: scale(0.89)
+	100%
+		opacity: 1
+		transform: scale(1) translate3d(0,0,0)
+
+
+
+.bounceOut
+	opacity: 0
+	animation-name: bounceOut
+	animation-duration: 300ms
+	animation-timing-function: linear
+	animation-fill-mode: forwards
+@keyframes bounceOut
+	0%
+		opacity: 1
+		transform: scale(0.3) translate3d(0,0,0)
+		transform: scale(1) translate3d(0,0,0)
+	50%
+		opacity: 1
+		transform: scale(1.1)
+	80%
+		opacity: 0.9
+		transform: scale(0.89)
+	100%
+		opacity: 0
+		transform: scale(0.3) translate3d(0,0,0)
 
 
 
@@ -308,10 +251,8 @@ input[type=text]:focus
 header
 	position: relative
 	padding-top: 1px
-	//background: linear-gradient(red, yellow)
-	//color: white
 	a
-		color: white
+		color: $white
 		text-decoration: none
 		text-transform: capitalize
 	
@@ -323,7 +264,6 @@ header
 	margin-bottom: 20px
 
 nav 
-	//border: 1PX SOLID HOTPINK
 	position: fixed
 	top: 0
 	right: 0
@@ -331,15 +271,16 @@ nav
 	height: 100%
 	background: linear-gradient($green, $drkgreen)
 	transform: translateX(102%)
-	transition: transform 0.35s ease
+	transition: transform 0.5s cubic-bezier(.77,-0.33,.29,1.37)
 	z-index: 10
 	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
+	font-weight: 300
 	&.open 
 		overflow: auto
-		transform: translateX(0rem)
+		transform: translateX(1rem)
 	
 nav ol 
-	margin: 6rem 0 0
+	margin: 4rem 0 0
 	padding: 0
 
 nav li 
@@ -364,52 +305,29 @@ nav.open a
 	font-size: 1.25rem
 	float: right
 
-nav.open .nav-toggle 
-	color: #FFF
-	opacity: 0.5
-	margin-top: 5px
+nav.open .nav-toggle
+	position: absolute
+	top: 1.3rem
+	right: 2.3rem
+	cursor: pointer
+	font-size: 1.25rem
+	float: right
+
+
+//nav.open .nav-toggle
+//	position: fixed
+//	display: block
+//	color: #FFF
+//	padding-top: 5px
+//	padding-right: 25px
+
+
+
+
 
 
 .back
 	overflow: hidden
-  
-.blur
-	filter: blur(2px)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .hide
