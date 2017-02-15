@@ -1,28 +1,6 @@
 $(document).ready(function(){
 "use strict";
 
-//REMOVE SHADOW ON LIST IF NO LIST
-//if($("li").is(":visible")){
-//	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-//}else{
-//	$("ul").css("box-shadow","");
-//}
-	
-	
-//ADD BOUNCE OUT ANIMATION CLASS
-//$(".modal__container").addClass('bounceOut');
-//setTimeout(function() { 
-//	$('.modal__container').removeClass('bounceOut');
-//	$("#js-modal").hide();
-//}, 600);
-	
-
-//ADD BOUNCE IN ANIMATION CLASS
-//$(".modal__container").addClass('bounceIn');
-	
-	
-	
-	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 if($("ul li").length === 0){
 	$(".emptyState").show();
@@ -34,7 +12,6 @@ if($("ul li").length === 0){
 	$(".emptyState").hide();
 	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }
-	
 	
 //HIDE PROMPTS ONLOAD
 $("#js-modal").hide();
@@ -55,8 +32,6 @@ function unloadPage(){
 	}
 }
 
-	
-	
 //***** LIST LOGIC && BROWSER STORAGE *****//
 		
 //SHOW PROMPT WHEN ON FAB TAP/CLICK
@@ -70,15 +45,11 @@ $("#js-fab").on("click", function(event){
   $input.focus();
 });
 
-	
-	
 //HIDE PROMPT IF USER CANCELS
 $("#btnCancel").on("click", function(){
 	$("#js-modal").hide();
 });
 
-	
-	
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
 $("#btnAdd").on("click", function(){
 	var $item = $("input").val();
@@ -158,15 +129,7 @@ $("ul").on("click", "li", function(){
 	}
 		
 });
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
 //***** NAVIGATION MENU *****//
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
@@ -176,18 +139,7 @@ $(function(){
 	});
 });
 	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
 //***** ADD TO HOMESCREEN *****//
-	
 $("#js-ath").hide();
 //ALERT USER TO SAVE TO HOME SCREEN IF NOT VIEWING IN FULL SCREEN APP MODE
 if(window.navigator.standalone === false){
@@ -201,10 +153,4 @@ $("#js-ath").on("click", function(){
 	$("#js-ath").hide();
 });
 
-	
-	
-	
-	
-	
-	
 });
