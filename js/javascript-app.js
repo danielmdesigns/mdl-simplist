@@ -10,15 +10,18 @@ $(document).ready(function(){
 	
 	
 //ADD BOUNCE OUT ANIMATION CLASS
-//$(".prompt").addClass('bounceOut');
+//$(".modal__container").addClass('bounceOut');
 //setTimeout(function() { 
-//	$('.prompt').removeClass('bounceOut');
-//	$("#js-item-prompt").hide();
+//	$('.modal__container').removeClass('bounceOut');
+//	$("#js-modal").hide();
 //}, 600);
 	
 
 //ADD BOUNCE IN ANIMATION CLASS
-//$(".prompt").addClass('bounceIn');
+//$(".modal__container").addClass('bounceIn');
+	
+	
+	
 	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 if($("ul li").length === 0){
@@ -34,7 +37,7 @@ if($("ul li").length === 0){
 	
 	
 //HIDE PROMPTS ONLOAD
-$("#js-item-prompt").hide();
+$("#js-modal").hide();
 
 //TEST FOR EMPTY STATE
 window.onunload = unloadPage;
@@ -63,21 +66,21 @@ $("#fab").on("click", function(event){
   $("h4").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-item-prompt").show();
+  $("#js-modal").show();
   $input.focus();
 });
 
 	
 	
 //HIDE PROMPT IF USER CANCELS
-$("#btn-cancel").on("click", function(){
-	$("#js-item-prompt").hide();
+$("#btnCancel").on("click", function(){
+	$("#js-modal").hide();
 });
 
 	
 	
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
-$("#btn-add").on("click", function(){
+$("#btnAdd").on("click", function(){
 	var $item = $("input").val();
   if($item === ""){
 		$("h4").html('Sorry, but your input can not be left blank.');
@@ -96,7 +99,7 @@ $("#btn-add").on("click", function(){
 			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 		}
 		$(".empty").hide();
-		$("#js-item-prompt").hide();
+		$("#js-modal").hide();
   }
 	
   $("#form")[0].reset();
@@ -109,7 +112,7 @@ $("#btn-add").on("click", function(){
 //SUBMIT TASK ON ENTER KEYPRESS
 $('input').on("keypress", function(e){
 	if(e.keyCode === 13 ){
-	 $("#btn-add").click();
+	 $("#btnAdd").click();
 	 $("input").blur();
 	}
 });
@@ -183,111 +186,25 @@ $(function(){
 	
 
 	
-//***** SUPPORTING PAGES *****//
+//***** ADD TO HOMESCREEN *****//
 	
-	
-	
-$("#developer").on("click", function(){
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-});
-//report a bug
-$("#report").on("click", function(){
-  $("#main-page-content").load("bug.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-//version history
-$("#version").on("click", function(){
-  $("#main-page-content").load("version.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-
-//support
-$("#support").on("click", function(e){
-  e.stopImmediatePropagation();
-  $("#main-page-content").load("support.html");
-  $("#fab").hide();
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-
-$("#help").on("click", function(e){
-  e.stopImmediatePropagation();
-});
-
-$("#demo-menu-lower-right").on("click", function(){
-	$(".mdl-ripple").addClass("show");
-	setTimeout(function(){
-		//alert("set time out");
-		$(".mdl-ripple").removeClass("show");
-	}, 1500);
-});
-
-$("#js-reminder-alert").hide();
-//if url is not being viewed in Full Screen App Mode, alert users to save to home screen
+$("#js-ath").show();
+//ALERT USER TO SAVE TO HOME SCREEN IF NOT VIEWING IN FULL SCREEN APP MODE
 if(window.navigator.standalone === false){
-  setTimeout(function(){
-	$("#js-reminder-alert").show();
-	//alert("Add this app to your home screen to quickly access Symplist!");
-  }, 100000);
+	setTimeout(function(){
+		$("#js-ath").show();
+	}, 100000 );
 }else{
-  //NaN
+  //...
 }
-$("#btn-gotit").on("click", function(){
-	$("#js-reminder-alert").hide();
+$("#js-ath").on("click", function(){
+	$("#js-ath").hide();
 });
 
+	
+	
+	
+	
+	
+	
 });
