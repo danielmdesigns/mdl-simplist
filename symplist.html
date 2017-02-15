@@ -58,21 +58,20 @@
 </header>
 
 <form id="form" action="#">
-  <div class="empty">
-    <img class="empty_img" src="imgs/thumbnails/empty_state.png" alt="You're all caught up!"/>
+  <div class="emptyState">
+    <img src="imgs/thumbnails/empty_state.png" alt="You're all caught up!"/>
   </div>
-  <ul id="list">
-  </ul>
+  <ul id="list"></ul>
 </form>
 
-<button id="fab" class="sfab">
+<button id="js-fab" class="fab">
 	<span class="icon">+</span>
 </button>
 
 <!-- Add Item -->
 <div id="js-modal" class="modal">
   <div class="modal__container">
-    <h4>Please add your item</h4>
+    <h4 class="modal__title">Please add your item</h4>
     <input type="text" name="input"><br>
     <button id="btnAdd" class="btn-add">Add</button>
     <button id="btnCancel" class="btn-cancel">Cancel</button>

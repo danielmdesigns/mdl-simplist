@@ -1,3 +1,4 @@
+//_COLORS
 $primary: #2dc32c
 $accent: #ff4081
 $gray: #DDDDDD
@@ -8,23 +9,119 @@ $green: #87DB48
 $drkgreen: #5CA724
 $lightgray: #FAFAFA
 
+
+
+//_GENERAL STYLES
 *
 	margin: 0
 	padding: 0
 	list-style: none
 	text-decoration: none
-
 body
 	background-color: $lightgray
 	font-family: "Roboto","Helvetica","Arial",sans-serif
 	font-weight: 100
 
-//.center
-//	margin: 0 auto
-  
 
-/*START NEW CHANGES*/
-.sfab
+
+//_MENU
+header
+	position: relative
+	padding-top: 1px
+	a
+		color: $white
+		text-decoration: none
+		text-transform: capitalize
+.logo
+	height: 24px
+	margin-left: 15px
+	margin-top: 15px
+	margin-bottom: 15px
+nav 
+	position: fixed
+	top: 0
+	right: 0
+	width: 60%
+	height: 100%
+	background: linear-gradient($green, $drkgreen)
+	transform: translateX(102%)
+	transition: transform 0.35s ease
+	z-index: 10
+	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
+	font-weight: 300
+	&.open 
+		overflow: auto
+		transform: translateX(1rem)
+nav ol 
+	margin: 4rem 0 0
+	padding: 0
+nav li 
+	list-style: none
+nav a
+	display: block
+	margin: 0.5rem 0
+	padding: 1rem 1rem
+	transition: transform 0.35s ease
+	&:hover, &:active 
+		transform: translateX(0.5rem)
+nav.open a 
+	padding-left: 2rem
+.nav-toggle
+	position: absolute
+	top: 1rem
+	right: 1rem
+	cursor: pointer
+	font-size: 1.25rem
+	float: right
+nav.open .nav-toggle
+	position: absolute
+	top: 1.3rem
+	right: 2.3rem
+	cursor: pointer
+	font-size: 1.25rem
+	float: right
+
+
+//_LIST VIEW
+ul#list
+	position: relative
+	padding: 1px
+	margin: 15px
+	border-radius: 5px
+	z-index: 1
+	//box-shadow: 0 0 20px 0 rgba(0,0,0,0.15)
+#list li
+	border-bottom: 1px solid $lightgray
+	color: $black
+	padding: 16px
+	display: block
+	font-size: 15px
+	font-weight: 300
+	overflow: hidden
+	background: white
+	cursor: pointer
+	&:last-of-type
+		border: none
+	&:after
+		//font-family: FontAwesome
+		//content: "\f1db"
+		content: "⚬"
+		font-size: 20px
+		float: right
+		color: $gray
+form > .emptyState
+	margin: 50px auto
+	text-align: center
+	img
+		text-align: center
+		width: 100%
+		max-width: 200px
+		margin-bottom: 10px
+
+	
+
+//_FLOATING ACTION BUTTON
+.fab
 	position: fixed
 	bottom: 15px
 	right: 15px
@@ -52,64 +149,9 @@ body
 	&:active
 		transform: scale(0.9)
 
-  
-#fab
-	color: $white
-  
-/* EMPTY STATE */
-form > .empty
-	//display: none
-	margin: 50px auto
-	text-align: center
-	.empty_image
-		text-align: center
-		width: 100%
-		max-width: 200px
-		margin-bottom: 10px
 	
-h4
-	padding: 20px
-	color: $black
-	font-weight: 300
-	font-size: 24px
-
-
-
-
-ul#list
-	position: relative
-	padding: 1px
-	margin: 15px
-	border-radius: 5px
-	z-index: 1
-	//box-shadow: 0 0 20px 0 rgba(0,0,0,0.15)
 	
-
-#list li
-	border-bottom: 1px solid $lightgray
-	color: $black
-	padding: 16px
-	display: block
-	font-size: 15px
-	font-weight: 300
-	overflow: hidden
-	background: white
-	cursor: pointer
-	&:last-of-type
-		border: none
-	&:after
-		//font-family: FontAwesome
-		//content: "\f1db"
-		content: "⚬"
-		font-size: 20px
-		float: right
-		color: $gray
-  
-  
-
-
-	
-/* custom prompt */
+//_MODAL
 .modal:before
 	content: ""
 	background-color: rgba(0, 0, 0, 0.2)
@@ -120,11 +162,8 @@ ul#list
 	bottom: 0
 	right: 0
 	z-index: 1
-	
 .modal:closed
 	display: none
-
-	
 .modal__container
 	position: fixed
 	top: 70px
@@ -139,11 +178,15 @@ ul#list
 	text-align: center
 	z-index: 1
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
+.modal__title
+	padding: 20px
+	color: $black
+	font-weight: 300
+	font-size: 24px
+		
 
-		
-		
-		
 
+//_MODAL BUTTONs
 button
 	border: none
 	background-color: transparent
@@ -160,7 +203,10 @@ button
 		font-weight: 700
 	&.btn-cancel
 		color: $gray
-  
+
+	
+	
+//_MODAL INPUT
 input,
 input[type=text]
 	width: 100%
@@ -174,7 +220,6 @@ input[type=text]
 	-webkit-box-shadow: 0
 	box-shadow: 0
 	-webkit-appearance: none
-
 input:focus,
 input[type=text]:focus
 	background-color: $white
@@ -186,86 +231,7 @@ input[type=text]:focus
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-header
-	position: relative
-	padding-top: 1px
-	a
-		color: $white
-		text-decoration: none
-		text-transform: capitalize
-	
-	
-.logo
-	height: 24px
-	margin-left: 15px
-	margin-top: 15px
-	margin-bottom: 15px
-
-nav 
-	position: fixed
-	top: 0
-	right: 0
-	width: 60%
-	height: 100%
-	background: linear-gradient($green, $drkgreen)
-	transform: translateX(102%)
-	transition: transform 0.35s ease
-	z-index: 10
-	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
-	font-weight: 300
-	&.open 
-		overflow: auto
-		transform: translateX(1rem)
-	
-nav ol 
-	margin: 4rem 0 0
-	padding: 0
-
-nav li 
-	list-style: none
-
-nav a
-	display: block
-	margin: 0.5rem 0
-	padding: 1rem 1rem
-	transition: transform 0.35s ease
-	&:hover, &:active 
-		transform: translateX(0.5rem)
-
-nav.open a 
-	padding-left: 2rem
-
-.nav-toggle
-	position: absolute
-	top: 1rem
-	right: 1rem
-	cursor: pointer
-	font-size: 1.25rem
-	float: right
-
-nav.open .nav-toggle
-	position: absolute
-	top: 1.3rem
-	right: 2.3rem
-	cursor: pointer
-	font-size: 1.25rem
-	float: right
-
-
-
-
-
+//_ADD TO HOMESCREEN SCREEN
 .ath
 	position: fixed
 	top: 0
@@ -278,19 +244,3 @@ nav.open .nav-toggle
 	color: white
 	img
 		margin-top: 12rem
-
-
-
-
-
-
-//.back
-//	overflow: hidden
-//
-//
-//.hide
-//	display: none !important
-//	opacity: 0 !important
-//
-//.blur
-//	filter: blur(2px)

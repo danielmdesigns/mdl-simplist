@@ -25,13 +25,13 @@ $(document).ready(function(){
 	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 if($("ul li").length === 0){
-	$(".empty").show();
+	$(".emptyState").show();
 	$("#list").css("box-shadow","");
 }else if($("ul li").length >= 1){
-	$(".empty").hide();
+	$(".emptyState").hide();
 	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }else{
-	$(".empty").hide();
+	$(".emptyState").hide();
 	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 }
 	
@@ -44,13 +44,13 @@ window.onunload = unloadPage;
 function unloadPage(){
   //alert("unload event detected!");
   if($("ul li").length === 0){
-		$(".empty").show();
+		$(".emptyState").show();
 		$("#list").css("box-shadow","");
 	}else if($("ul li").length >= 1){
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 }
@@ -60,10 +60,10 @@ function unloadPage(){
 //***** LIST LOGIC && BROWSER STORAGE *****//
 		
 //SHOW PROMPT WHEN ON FAB TAP/CLICK
-$("#fab").on("click", function(event){
+$("#js-fab").on("click", function(event){
   var $input = $("input");
   $input.val("");
-  $("h4").html("Please add your item");
+  $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
   $("#js-modal").show();
@@ -83,22 +83,22 @@ $("#btnCancel").on("click", function(){
 $("#btnAdd").on("click", function(){
 	var $item = $("input").val();
   if($item === ""){
-		$("h4").html('Sorry, but your input can not be left blank.');
+		$(".modal__title").html('Sorry, but your input can not be left blank.');
   }else if($item === null){
 		return false;
   }else{
 		$("ul").append("<li>" + $item + "</li>");
 		if($("ul li").length === 0){
-			$(".empty").show();
+			$(".emptyState").show();
 			$("#list").css("box-shadow","");
 		}else if($("ul li").length >= 1){
-			$(".empty").hide();
+			$(".emptyState").hide();
 			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 		}else{
-			$(".empty").hide();
+			$(".emptyState").hide();
 			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 		}
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#js-modal").hide();
   }
 	
@@ -121,13 +121,13 @@ $('input').on("keypress", function(e){
 if(localStorage.getItem('list')){	
   $('#list').html(localStorage.getItem('list'));
   if($("ul li").length === 0){
-		$(".empty").show();
+		$(".emptyState").show();
 		$("#list").css("box-shadow","");
 	}else if($("ul li").length >= 1){
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 }
@@ -147,13 +147,13 @@ $("ul").on("click", "li", function(){
 	localStorage.setItem('list', newList);
 
 	if($("ul li").length === 0){
-		$(".empty").show();
+		$(".emptyState").show();
 		$("#list").css("box-shadow","");
 	}else if($("ul li").length >= 1){
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
-		$(".empty").hide();
+		$(".emptyState").hide();
 		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 		
@@ -188,12 +188,12 @@ $(function(){
 	
 //***** ADD TO HOMESCREEN *****//
 	
-$("#js-ath").show();
+$("#js-ath").hide();
 //ALERT USER TO SAVE TO HOME SCREEN IF NOT VIEWING IN FULL SCREEN APP MODE
 if(window.navigator.standalone === false){
 	setTimeout(function(){
 		$("#js-ath").show();
-	}, 100000 );
+	}, 100000);
 }else{
   //...
 }
