@@ -1,52 +1,78 @@
 $(document).ready(function(){
 "use strict";
 
-//hide the prompt initially
-$("#js-item-prompt").hide();
+//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
+if($("ul li").length === 0){
+	$(".emptyState").show();
+	$("#list").css("box-shadow","");
+}else if($("ul li").length >= 1){
+	$(".emptyState").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}else{
+	$(".emptyState").hide();
+	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+}
+	
+//HIDE PROMPTS ONLOAD
+$("#js-modal").hide();
 
-//empty state screen test
+//TEST FOR EMPTY STATE
 window.onunload = unloadPage;
 function unloadPage(){
   //alert("unload event detected!");
   if($("ul li").length === 0){
-	  $(".empty").show();
-  }else if($("ul li").length >= 1){
-	  $(".empty").hide();
-  }else{
-	  $(".empty").hide();
-  }
+		$(".emptyState").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
 }
 
-//list logic & browser storage
-//show prompt using FAB
-$("#fab").on("click", function(event){
+//***** LIST LOGIC && BROWSER STORAGE *****//
+		
+//SHOW PROMPT WHEN ON FAB TAP/CLICK
+$("#js-fab").on("click", function(event){
   var $input = $("input");
   $input.val("");
-  $("h4").html("Please add your item");
+  $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-item-prompt").show();
+  $("#js-modal").show();
   $input.focus();
 });
 
-//hide prompt if user cancels
-$("#btn-cancel").on("click", function(){
-  $("#js-item-prompt").hide();
+//HIDE PROMPT IF USER CANCELS
+$("#btnCancel").on("click", function(){
+	$("#js-modal").hide();
 });
 
-//submit task to list using FAB
-$("#btn-add").on("click", function(){
-var $item = $("input").val();
+//SUBMIT TASK TO LIST ON FAB TAP/CLICK
+$("#btnAdd").on("click", function(){
+	var $item = $("input").val();
   if($item === ""){
-	$("h4").html('Sorry, but your input can not be left blank.');
+		$(".modal__title").html('Sorry, but your input can not be left blank.');
   }else if($item === null){
-	return false;
+		return false;
   }else{
-	$("ul").append("<li>" + $item + "</li>");
-	$("#js-item-prompt").hide();
-	$(".empty").hide();
+		$("ul").append("<li>" + $item + "</li>");
+		if($("ul li").length === 0){
+			$(".emptyState").show();
+			$("#list").css("box-shadow","");
+		}else if($("ul li").length >= 1){
+			$(".emptyState").hide();
+			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		}else{
+			$(".emptyState").hide();
+			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		}
+		$(".emptyState").hide();
+		$("#js-modal").hide();
   }
-  
+	
   $("#form")[0].reset();
   var list = $('#list').html();
   localStorage.setItem('list', list);
@@ -54,147 +80,77 @@ var $item = $("input").val();
   
 });
 
-//if enter is pressed, submit task to list
+//SUBMIT TASK ON ENTER KEYPRESS
 $('input').on("keypress", function(e){
-   if(e.keyCode === 13 ){
-       $("#btn-add").click();
-	   $("input").blur();
-   }
-});
-
-//shows
-if(localStorage.getItem('list')){
-  $('#list').html(localStorage.getItem('list'));
-  if($("ul li").length === 0){
-	$(".empty").show();
-}else if($("ul li").length >= 1){
-	$(".empty").hide();
-}else{
-	$(".empty").hide();
-}
-}
-    
-//remove
-$("ul").on("click", "li", function (){
-    $(this).remove();
-    var i = $(this).text();
-	// get the current list as a string.
-    var currentList = localStorage.getItem('list');
-	// replace the clicked item with a blank string.
-    var newList = currentList.replace('<li>' + i + '</li>', '');
-	// update the localStorage with the new list
-    localStorage.setItem('list', newList);
-	if($("ul li").length === 0){
-		$(".empty").show();
-	}else if($("ul li").length >= 1){
-		$(".empty").hide();
-	}else{
-		$(".empty").hide();
+	if(e.keyCode === 13 ){
+	 $("#btnAdd").click();
+	 $("input").blur();
 	}
 });
 
-/* Supporting Pages */
-$("#developer").on("click", function(){
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-});
-//report a bug
-$("#report").on("click", function(){
-  $("#main-page-content").load("bug.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-//version history
-$("#version").on("click", function(){
-  $("#main-page-content").load("version.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-
-//support
-$("#support").on("click", function(e){
-  e.stopImmediatePropagation();
-  $("#main-page-content").load("support.html");
-  $("#fab").hide();
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-
-$("#help").on("click", function(e){
-  e.stopImmediatePropagation();
-});
-
-$("#demo-menu-lower-right").on("click", function(){
-	$(".mdl-ripple").addClass("show");
-	setTimeout(function(){
-		//alert("set time out");
-		$(".mdl-ripple").removeClass("show");
-	}, 1500);
-});
-
-$("#js-reminder-alert").hide();
-//if url is not being viewed in Full Screen App Mode, alert users to save to home screen
-if(window.navigator.standalone === false){
-  setTimeout(function(){
-	$("#js-reminder-alert").show();
-	//alert("Add this app to your home screen to quickly access Symplist!");
-  }, 100000);
-}else{
-  //NaN
+//SHOW LIST
+if(localStorage.getItem('list')){	
+  $('#list').html(localStorage.getItem('list'));
+  if($("ul li").length === 0){
+		$(".emptyState").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
 }
-$("#btn-gotit").on("click", function(){
-	$("#js-reminder-alert").hide();
+    
+//REMOVE LIST ITEM
+$("ul").on("click", "li", function(){
+	$(this).remove();
+	var i = $(this).text();
+
+	//GET CURRENT LIST AS A STRING
+	var currentList = localStorage.getItem('list');
+
+	//REPLACE THE CLICKED ITEM WITH A BLANK STRING
+	var newList = currentList.replace('<li>' + i + '</li>', '');
+
+	//UPDATE LOCALSTORAGE WITH UPDATED LIST
+	localStorage.setItem('list', newList);
+
+	if($("ul li").length === 0){
+		$(".emptyState").show();
+		$("#list").css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		$(".emptyState").hide();
+		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
+		
+});
+		
+//***** NAVIGATION MENU *****//
+$(function(){
+	$('.nav-toggle, nav a').on('click',function(){
+		$('nav').toggleClass('open');
+		$('main').toggleClass('back').toggleClass("blur");
+ 
+	});
+});
+	
+//***** ADD TO HOMESCREEN *****//
+$("#js-ath").hide();
+//ALERT USER TO SAVE TO HOME SCREEN IF NOT VIEWING IN FULL SCREEN APP MODE
+if(window.navigator.standalone === false){
+	setTimeout(function(){
+		$("#js-ath").show();
+	}, 100000);
+}else{
+  //...
+}
+$("#js-ath").on("click", function(){
+	$("#js-ath").hide();
 });
 
 });

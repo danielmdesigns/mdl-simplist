@@ -13,11 +13,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="darkgreen" />
     
 <!-- Stylesheets -->
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
 <link rel="stylesheet" href="css/styles.css?v=4">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,700" type="text/css">
     
 <!-- Favicons -->
 <link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-touch-icon-57x57.png">
@@ -44,98 +41,52 @@
 </head>
 <body>
 
-<!-- Add Item Prompt -->
-<div id="js-item-prompt" class="prompt-container">
-  <div class="prompt">
-    <h4>Please add your item</h4>
+<header>
+  <img class="logo" src="imgs/nav/symplist_logo.png" alt="Symplist App">
+  <img class="nav-toggle" src="imgs/nav/icon_menu.png" alt="Menu">
+  <nav role="navigation">
+   	<img class="nav-toggle" src="imgs/nav/icon_close.png" alt="Close">
+    <ol>
+      <li><a href="#">Homepage</a></li>
+      <li><a href="#">Report a Bug</a></li>
+      <li><a href="#">Version History</a></li>
+      <li><a href="#">Developer Website</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">Download App!</a></li>
+    </ol>
+  </nav>
+</header>
+
+<form id="form" action="#">
+  <div class="emptyState">
+    <img src="imgs/thumbnails/empty_state.png" alt="You're all caught up!"/>
+  </div>
+  <ul id="list"></ul>
+</form>
+
+<button id="js-fab" class="fab">
+	<span class="icon_fab">+</span>
+</button>
+
+<!-- Add Item -->
+<div id="js-modal" class="modal">
+  <div class="modal__container">
+    <h4 class="modal__title">Please add your item</h4>
     <input type="text" name="input"><br>
-    <button id="btn-add">ADD</button>
-    <button id="btn-cancel">CANCEL</button>
+    <button id="btnAdd" class="btn-add">Add</button>
+    <button id="btnCancel" class="btn-cancel">Cancel</button>
   </div>
 </div>
 
 <!-- Download Alert -->
-<div id="js-reminder-alert" class="prompt-container">
-  <div class="prompt">
-    <h5>Don't Forget</h5>
-    <p>Add this app to your home screen to quickly access Symplist, just like all your other favorite apps!</p>
-    <button id="btn-gotit">GOT IT</button>
+<div id="js-ath">
+  <div class="ath">
+    <img src="imgs/nav/ath.png" alt="Add to Homescreen.">
   </div>
 </div>
-
-<!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-<!-- Header -->
-<header class="mdl-layout__header">
-  <div class="mdl-layout__header-row">
-
-    <!-- App Title -->
-    <span class="mdl-layout-title">Symplist</span>
-
-    <!-- Add spacer, to align navigation to the right -->
-    <div class="mdl-layout-spacer"></div>
-
-    <!-- Dropdown Icon -->
-    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-      <i class="material-icons">more_vert</i>
-    </button>
-
-    <!-- Right Dropdown Menu -->
-    <ol class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-      <a id="support" href="#">
-        <li class="mdl-menu__item">
-          <i class="fa fa-dollar"></i> Support
-        </li>
-      </a>
-      <a id="help" href="http://goo.gl/DoHW78" target="_blank">
-        <li class="mdl-menu__item">
-          <i class="fa fa-download"></i> Download App
-        </li>
-      </a>
-    </ol>
-
-  </div>
-</header>
-
-<!-- Left Drawer Menu -->
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Symplist</span>
-  <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="http://www.danielmdesigns.com/symplist/index.html" target="_blank">Homepage</a>
-    <a id="report" class="mdl-navigation__link" href="#">Report an Issue</a>
-    <a id="version" class="mdl-navigation__link" href="#">Version History</a>
-    <a id="developer" class="mdl-navigation__link" href="http://www.danielmdesigns.com" target="_blank">Developer Website</a>
-  </nav>
-</div>
-
-<!-- Main -->
-<main class="mdl-layout__content">
-  <div id="main-page-content" class="page-content">
-
-<!-- List -->
-<form id="form" action="#">
-  <div class="empty">
-    <img class="empty_img" src="imgs/thumbnails/empty_state.png" alt="You're all caught up!"/>
-    <h5>You're all caught up!</h5>
-  </div>
-  <ul id="list">
-  </ul>
-</form>
-
-  </div>
-</main>
-
-</div>
-
-<!-- Colored FAB button with ripple -->
-<button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons green">add</i>
-</button>
 
 <!-- Javascript Support -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
 <script src="js/javascript-app.js?v=1"></script>
 </body>
 </html>
