@@ -16,6 +16,10 @@ $(document).ready(function(){
 //	$("#js-item-prompt").hide();
 //}, 600);
 	
+
+//ADD BOUNCE IN ANIMATION CLASS
+//$(".prompt").addClass('bounceIn');
+	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 if($("ul li").length === 0){
 	$(".empty").show();
@@ -51,9 +55,7 @@ function unloadPage(){
 	
 	
 //***** LIST LOGIC && BROWSER STORAGE *****//
-	
-	
-	
+		
 //SHOW PROMPT WHEN ON FAB TAP/CLICK
 $("#fab").on("click", function(event){
   var $input = $("input");
@@ -61,21 +63,19 @@ $("#fab").on("click", function(event){
   $("h4").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-	$(".prompt").addClass('bounceIn');
   $("#js-item-prompt").show();
   $input.focus();
 });
 
-	//HIDE PROMPT IF USER CANCELS
-	$("#btn-cancel").on("click", function(){
-//		$(".prompt").addClass('bounceOut');
-//		setTimeout(function() { 
-//			$('.prompt').removeClass('bounceOut');
-//			$("#js-item-prompt").hide();
-//		}, 600);
+	
+	
+//HIDE PROMPT IF USER CANCELS
+$("#btn-cancel").on("click", function(){
 	$("#js-item-prompt").hide();
-	});
+});
 
+	
+	
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
 $("#btn-add").on("click", function(){
 	var $item = $("input").val();
@@ -85,28 +85,19 @@ $("#btn-add").on("click", function(){
 		return false;
   }else{
 		$("ul").append("<li>" + $item + "</li>");
-		
-	if($("ul li").length === 0){
-		$(".empty").show();
-		$("#list").css("box-shadow","");
-	}else if($("ul li").length >= 1){
-		$(".empty").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}else{
-		$(".empty").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}
-		
-//		$(".prompt").addClass('bounceOut');
-//		setTimeout(function(){ 
-//			$('.prompt').removeClass('bounceOut');
-//			$("#js-item-prompt").hide();
-//		}, 600);
-		
+		if($("ul li").length === 0){
+			$(".empty").show();
+			$("#list").css("box-shadow","");
+		}else if($("ul li").length >= 1){
 			$(".empty").hide();
+			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		}else{
+			$(".empty").hide();
+			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 		}
-	
-	$("#js-item-prompt").hide();
+		$(".empty").hide();
+		$("#js-item-prompt").hide();
+  }
 	
   $("#form")[0].reset();
   var list = $('#list').html();
@@ -177,6 +168,8 @@ $("ul").on("click", "li", function(){
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
 		$('nav').toggleClass('open');
+		$('main').toggleClass('back').toggleClass("blur");
+ 
 	});
 });
 	
