@@ -44,12 +44,14 @@ body
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
 	line-height: normal
 	cursor: pointer
-	transition: background-color 0.35s ease
+	transition: background-color 0.35s ease, transform 0.35s ease
 	.icon
 		display: block
 		margin-top: -4px
 	&:hover
 		background-color: darken($green, 5%)
+	&:active
+		transform: scale(0.9)
 /*END NEW CHANGES*/
 
 
