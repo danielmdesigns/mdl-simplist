@@ -289,6 +289,129 @@ input[type=text]:focus
 //button#btn-cancel:hover
 //	background-color: transparent
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header
+	position: relative
+	padding-top: 1px
+	//background: linear-gradient(red, yellow)
+	//color: white
+	a
+		color: white
+		text-decoration: none
+		text-transform: capitalize
+	
+	
+.logo
+	height: 24px
+	margin-left: 15px
+	margin-top: 15px
+	margin-bottom: 20px
+
+nav 
+	//border: 1PX SOLID HOTPINK
+	position: fixed
+	top: 0
+	right: 0
+	width: 60%
+	height: 100%
+	background: linear-gradient($green, $drkgreen)
+	transform: translateX(102%)
+	transition: transform 0.35s ease
+	z-index: 10
+	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
+	&.open 
+		overflow: auto
+		transform: translateX(0rem)
+	
+nav ol 
+	margin: 6rem 0 0
+	padding: 0
+
+nav li 
+	list-style: none
+
+nav a
+	display: block
+	margin: 0.5rem 0
+	padding: 1rem 1rem
+	transition: transform 0.35s ease
+	&:hover, &:active 
+		transform: translateX(0.5rem)
+
+nav.open a 
+	padding-left: 2rem
+
+.nav-toggle
+	position: absolute
+	top: 1rem
+	right: 1rem
+	cursor: pointer
+	font-size: 1.25rem
+	float: right
+
+nav.open .nav-toggle 
+	color: #FFF
+	opacity: 0.5
+	margin-top: 5px
+
+
+.back
+	overflow: hidden
+  
+.blur
+	filter: blur(2px)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .hide
 	display: none !important
 	opacity: 0 !important

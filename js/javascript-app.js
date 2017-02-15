@@ -161,6 +161,32 @@ $("ul").on("click", "li", function(){
 	}
 		
 });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//***** NAVIGATION MENU *****//
+$(function(){
+	$('.nav-toggle, nav a').on('click',function(){
+		$('nav').toggleClass('open');
+		$('main').toggleClass('back').toggleClass("blur");
+ 
+	});
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 //***** SUPPORTING PAGES *****//
