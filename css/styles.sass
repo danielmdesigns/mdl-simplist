@@ -19,8 +19,8 @@ body
 	font-family: "Roboto","Helvetica","Arial",sans-serif
 	font-weight: 100
 
-.center
-	margin: 0 auto
+//.center
+//	margin: 0 auto
   
 
 /*START NEW CHANGES*/
@@ -106,16 +106,11 @@ ul#list
 		color: $gray
   
   
-footer
-	position: fixed
-	bottom: 0
-	width: 100%
-  
 
 
 	
 /* custom prompt */
-.prompt-container:before
+.modal:before
 	content: ""
 	background-color: rgba(0, 0, 0, 0.2)
 	display: block
@@ -126,11 +121,11 @@ footer
 	right: 0
 	z-index: 1
 	
-.prompt-container:closed
+.modal:closed
 	display: none
 
 	
-.prompt
+.modal__container
 	position: fixed
 	top: 70px
 	left: 15px
@@ -190,52 +185,6 @@ input[type=text]:focus
 	-webkit-appearance: none
 
 
-
-
-
-
-.bounceIn
-	opacity: 0
-	animation-name: bounceIn
-	animation-duration: 300ms
-	animation-timing-function: linear
-	animation-fill-mode: forwards
-@keyframes bounceIn
-	0%
-		opacity: 0
-		transform: scale(0.3) translate3d(0,0,0)
-	50%
-		opacity: 0.9
-		transform: scale(1.1)
-	80%
-		opacity: 1
-		transform: scale(0.89)
-	100%
-		opacity: 1
-		transform: scale(1) translate3d(0,0,0)
-
-
-
-.bounceOut
-	opacity: 0
-	animation-name: bounceOut
-	animation-duration: 300ms
-	animation-timing-function: linear
-	animation-fill-mode: forwards
-@keyframes bounceOut
-	0%
-		opacity: 1
-		transform: scale(0.3) translate3d(0,0,0)
-		transform: scale(1) translate3d(0,0,0)
-	50%
-		opacity: 1
-		transform: scale(1.1)
-	80%
-		opacity: 0.9
-		transform: scale(0.89)
-	100%
-		opacity: 0
-		transform: scale(0.3) translate3d(0,0,0)
 
 
 
@@ -317,14 +266,31 @@ nav.open .nav-toggle
 
 
 
+.ath
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background: linear-gradient($green, $drkgreen)
+	text-align: center
+	z-index: 10
+	height: 100vh
+	color: white
+	img
+		margin-top: 12rem
 
-.back
-	overflow: hidden
 
 
-.hide
-	display: none !important
-	opacity: 0 !important
 
-.blur
-	filter: blur(2px)
+
+
+//.back
+//	overflow: hidden
+//
+//
+//.hide
+//	display: none !important
+//	opacity: 0 !important
+//
+//.blur
+//	filter: blur(2px)
