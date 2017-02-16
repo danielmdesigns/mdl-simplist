@@ -6,15 +6,27 @@ $("#js-modal").hide();
 	
 //REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
 function emptyState(){
+	var emptyStateGraphic = $(".emptyState");
+	var listView = $("#list");
 	if($("ul li").length === 0){
-		$(".emptyState").show();
-		$("#list").css("box-shadow","");
+		emptyStateGraphic.show();
+		listView.css("box-shadow","");
 	}else if($("ul li").length >= 1){
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
+}
+
+//BLUR ELEMENTS IN BACKGROUND 
+function blur(){
+	var blurElements = $(".logo, .nav-toggle, form, .fab");
+	if($("#js-modal").is(":visible")){
+		blurElements.addClass("blur");
+	}else{
+		blurElements.removeClass("blur");
 	}
 }
 	
@@ -33,13 +45,15 @@ $("#js-fab").on("click", function(event){
   $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-modal").show();
+  $("#js-modal").fadeIn("fast");
+	blur();
   $input.focus();
 });
 
 //HIDE PROMPT IF USER CANCELS
 $("#btnCancel").on("click", function(){
 	$("#js-modal").hide();
+	blur();
 });
 
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
@@ -54,6 +68,7 @@ $("#btnAdd").on("click", function(){
 		emptyState();
 		$(".emptyState").hide();
 		$("#js-modal").hide();
+		blur();
   }
 	
   $("#form")[0].reset();
@@ -99,11 +114,13 @@ $("ul").on("click", "li", function(){
 //***** NAVIGATION MENU *****//
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
-		$('nav').toggleClass('open');
-		if($("nav").hasClass("open")){
-			$(".logo, form").addClass("blur");
+		var nav = $('nav');
+		var blurItems = $(".logo, form");
+		nav.toggleClass('open');
+		if(nav.hasClass("open")){
+			blurItems.addClass("blur");
 		}else{
-			$(".logo, form").removeClass("blur");
+			blurItems.removeClass("blur");
 		}
 	});
 });
