@@ -145,7 +145,7 @@ $("#js-ath").hide();
 if(window.navigator.standalone === false){
 	setTimeout(function(){
 		$("#js-ath").show();
-	}, 100000);
+	}, 300000);
 }else{
   //...
 }
