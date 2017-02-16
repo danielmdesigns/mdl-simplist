@@ -18,9 +18,9 @@ $lightgray: #FAFAFA
 	list-style: none
 	text-decoration: none
 body
-	background-color: $lightgray
 	font-family: "Roboto","Helvetica","Arial",sans-serif
 	font-weight: 100
+	background-color: $lightgray
 
 
 
@@ -29,26 +29,24 @@ header
 	position: relative
 	padding-top: 1px
 	a
-		color: $white
 		text-decoration: none
 		text-transform: capitalize
+		color: $white
 .logo
 	height: 24px
-	margin-left: 15px
-	margin-top: 15px
-	margin-bottom: 15px
+	margin: 15px 0 15px 15px
 nav 
+	font-weight: 300
 	position: fixed
+	z-index: 10
 	top: 0
 	right: 0
 	width: 60%
 	height: 100%
-	background: linear-gradient($green, $drkgreen)
-	transform: translateX(102%)
 	transition: transform 0.35s ease
-	z-index: 10
+	transform: translateX(102%)
+	background: linear-gradient($green, $drkgreen)
 	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
-	font-weight: 300
 	&.open 
 		overflow: auto
 		transform: translateX(1rem)
@@ -67,80 +65,80 @@ nav a
 nav.open a 
 	padding-left: 2rem
 .nav-toggle
+	font-size: 1.25rem
 	position: absolute
 	top: 1rem
 	right: 1rem
-	cursor: pointer
-	font-size: 1.25rem
 	float: right
+	cursor: pointer
 nav.open .nav-toggle
+	font-size: 1.25rem
 	position: absolute
 	top: 1.3rem
 	right: 2.3rem
-	cursor: pointer
-	font-size: 1.25rem
 	float: right
+	cursor: pointer
 
 
 //_LIST VIEW
 ul#list
 	position: relative
-	padding: 1px
-	margin: 15px
-	border-radius: 5px
 	z-index: 1
+	margin: 15px
+	padding: 1px
+	border-radius: 5px
 	//box-shadow: 0 0 20px 0 rgba(0,0,0,0.15)
 #list li
-	border-bottom: 1px solid $lightgray
-	color: $black
-	padding: 16px
-	display: block
 	font-size: 15px
 	font-weight: 300
+	display: block
 	overflow: hidden
-	background: white
+	padding: 16px
 	cursor: pointer
+	color: $black
+	border-bottom: 1px solid $lightgray
+	background: white
 	&:last-of-type
 		border: none
 	&:after
 		//font-family: FontAwesome
 		//content: "\f1db"
-		content: "⚬"
 		font-size: 20px
 		float: right
+		content: "⚬"
 		color: $gray
 form > .emptyState
 	margin: 50px auto
 	text-align: center
 	img
-		text-align: center
 		width: 100%
 		max-width: 237px
 		margin-bottom: 10px
+		text-align: center
 
 	
 
 //_FLOATING ACTION BUTTON
 .fab
+	font-size: 30px
+	font-weight: 100
+	line-height: normal
 	position: fixed
-	bottom: 15px
-	right: 15px
 	z-index: 1
+	right: 15px
+	bottom: 15px
+	overflow: hidden
+	width: 56px
+	min-width: 56px
+		height: 56p
+	margin: auto
+	padding: 0
+	cursor: pointer
+	transition: background-color 0.35s ease, transform 0.35s ease
 	color: $white
 	background-color: $green
 	border-radius: 50%
-	font-size: 30px
-	font-weight: 100
-	height: 56px
-	margin: auto
-	min-width: 56px
-	width: 56px
-	padding: 0
-	overflow: hidden
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
-	line-height: normal
-	cursor: pointer
-	transition: background-color 0.35s ease, transform 0.35s ease
 	.icon_fab
 		display: block
 		margin-top: -4px
@@ -154,53 +152,53 @@ form > .emptyState
 //_MODAL
 .modal:before
 	content: ""
-	background-color: rgba(0, 0, 0, 0.2)
-	display: block
 	position: fixed
+	z-index: 1
 	top: 0
 	left: 0
 	bottom: 0
 	right: 0
-	z-index: 1
+	display: block
+	background-color: rgba(0, 0, 0, 0.2)
 .modal:closed
 	display: none
 .modal__container
 	position: fixed
+	z-index: 1
 	top: 70px
 	left: 15px
 	right: 15px
-	margin: 0 auto
 	display: block
-	background: $white
+	margin: 0 auto
 	padding: 20px 40px
-	max-width: 600px
-	border-radius: 4px
 	text-align: center
-	z-index: 1
+	border-radius: 4px
+	background: $white
+	max-width: 600px
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
 .modal__title
+	font-size: 24px
+	font-weight: 300
 	padding: 20px
 	color: $black
-	font-weight: 300
-	font-size: 24px
 		
 
 
 //_MODAL BUTTONs
 button
-	border: none
-	background-color: transparent
-	font-weight: 100
 	font-size: 14px
+	font-weight: 100
+	float: right
 	padding: 15px
 	cursor: pointer
-	float: right
+	border: none
 	outline: none
+	background-color: transparent
 	&:hover
 		background-color: transparent
 	&.btn-add
-		color: $green
 		font-weight: 700
+		color: $green
 	&.btn-cancel
 		color: $gray
 
@@ -210,21 +208,21 @@ button
 input,
 input[type=text]
 	width: 100%
-	padding: 10px 0
 	margin-bottom: 10px
-	outline: none
-	background-color: $white
+	padding: 10px 0
 	border: 1px solid $gray
 	-webkit-border-radius: none
 	border-radius: 0
+	outline: none
+	background-color: $white
 	-webkit-box-shadow: 0
 	box-shadow: 0
 	-webkit-appearance: none
 input:focus,
 input[type=text]:focus
-	background-color: $white
 	border: 1px solid $gray
 	outline: none
+	background-color: $white
 	-webkit-box-shadow: 0
 	box-shadow: 0
 	-webkit-appearance: none
@@ -234,14 +232,14 @@ input[type=text]:focus
 //_ADD TO HOMESCREEN SCREEN
 .ath
 	position: fixed
+	z-index: 10
 	top: 0
 	left: 0
 	width: 100%
-	background: linear-gradient($green, $drkgreen)
-	text-align: center
-	z-index: 10
 	height: 100vh
+	text-align: center
 	color: white
+	background: linear-gradient($green, $drkgreen)
 	img
 		margin-top: 12rem
 	
