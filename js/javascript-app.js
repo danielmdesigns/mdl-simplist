@@ -1,35 +1,39 @@
 $(document).ready(function(){
 "use strict";
 
-//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
-if($("ul li").length === 0){
-	$(".emptyState").show();
-	$("#list").css("box-shadow","");
-}else if($("ul li").length >= 1){
-	$(".emptyState").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}else{
-	$(".emptyState").hide();
-	$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-}
-	
 //HIDE PROMPTS ONLOAD
 $("#js-modal").hide();
+	
+//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
+function emptyState(){
+	var emptyStateGraphic = $(".emptyState");
+	var listView = $("#list");
+	if($("ul li").length === 0){
+		emptyStateGraphic.show();
+		listView.css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
+}
 
+//BLUR ELEMENTS IN BACKGROUND 
+function blur(){
+	var blurElements = $(".logo, .nav-toggle, form, .fab");
+	if($("#js-modal").is(":visible")){
+		blurElements.addClass("blur");
+	}else{
+		blurElements.removeClass("blur");
+	}
+}
+	
 //TEST FOR EMPTY STATE
 window.onunload = unloadPage;
 function unloadPage(){
-  //alert("unload event detected!");
-  if($("ul li").length === 0){
-		$(".emptyState").show();
-		$("#list").css("box-shadow","");
-	}else if($("ul li").length >= 1){
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}else{
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}
+	emptyState();
 }
 
 //***** LIST LOGIC && BROWSER STORAGE *****//
@@ -41,13 +45,15 @@ $("#js-fab").on("click", function(event){
   $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-modal").show();
+  $("#js-modal").fadeIn("fast");
+	blur();
   $input.focus();
 });
 
 //HIDE PROMPT IF USER CANCELS
 $("#btnCancel").on("click", function(){
 	$("#js-modal").hide();
+	blur();
 });
 
 //SUBMIT TASK TO LIST ON FAB TAP/CLICK
@@ -59,18 +65,10 @@ $("#btnAdd").on("click", function(){
 		return false;
   }else{
 		$("ul").append("<li>" + $item + "</li>");
-		if($("ul li").length === 0){
-			$(".emptyState").show();
-			$("#list").css("box-shadow","");
-		}else if($("ul li").length >= 1){
-			$(".emptyState").hide();
-			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-		}else{
-			$(".emptyState").hide();
-			$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-		}
+		emptyState();
 		$(".emptyState").hide();
 		$("#js-modal").hide();
+		blur();
   }
 	
   $("#form")[0].reset();
@@ -91,16 +89,7 @@ $('input').on("keypress", function(e){
 //SHOW LIST
 if(localStorage.getItem('list')){	
   $('#list').html(localStorage.getItem('list'));
-  if($("ul li").length === 0){
-		$(".emptyState").show();
-		$("#list").css("box-shadow","");
-	}else if($("ul li").length >= 1){
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}else{
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}
+	emptyState();
 }
     
 //REMOVE LIST ITEM
@@ -116,26 +105,23 @@ $("ul").on("click", "li", function(){
 
 	//UPDATE LOCALSTORAGE WITH UPDATED LIST
 	localStorage.setItem('list', newList);
-
-	if($("ul li").length === 0){
-		$(".emptyState").show();
-		$("#list").css("box-shadow","");
-	}else if($("ul li").length >= 1){
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}else{
-		$(".emptyState").hide();
-		$("#list").css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
-	}
+	
+	//CHECK FOR EMPTY LIST
+	emptyState();
 		
 });
 		
 //***** NAVIGATION MENU *****//
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
-		$('nav').toggleClass('open');
-		$('main').toggleClass('back').toggleClass("blur");
- 
+		var nav = $('nav');
+		var blurItems = $(".logo, form");
+		nav.toggleClass('open');
+		if(nav.hasClass("open")){
+			blurItems.addClass("blur");
+		}else{
+			blurItems.removeClass("blur");
+		}
 	});
 });
 	
