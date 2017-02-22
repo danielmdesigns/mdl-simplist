@@ -42,24 +42,26 @@
 <body>
 
 <header>
-  <img class="logo" src="imgs/nav/symplist_logo.png" alt="Symplist App">
+  <a class="brand" href="symplist.html">
+  	<img class="logo" src="imgs/nav/symplist_logo.png" alt="Symplist App">
+  </a>
   <img class="nav-toggle" src="imgs/nav/icon_menu.png" alt="Menu">
   <nav role="navigation">
    	<img class="nav-toggle" src="imgs/nav/icon_close.png" alt="Close">
     <ol>
-      <li><a href="#">Homepage</a></li>
-      <li><a href="#">Report a Bug</a></li>
-      <li><a href="#">Version History</a></li>
-      <li><a href="#">Developer Website</a></li>
-      <li><a href="#">Support</a></li>
-      <li><a href="#">Download App!</a></li>
+      <li><a href="symplist.html">My List</a></li>
+      <li><a href="#" target="_blank">Homepage</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="bug.html">Report a Bug</a></li>
+      <li><a href="#" target="_blank">Developer</a></li>
+      <li><a href="download.html">How to Download</a></li>
     </ol>
   </nav>
 </header>
 
 <form id="form" action="#">
   <div class="emptyState">
-    <img src="imgs/thumbnails/empty_state.png" alt="You're all caught up!"/>
+    <img src="imgs/states/empty_state.png" alt="You're all caught up!"/>
   </div>
   <ul id="list"></ul>
 </form>
