@@ -9,6 +9,8 @@ $green: #87DB48
 $drkgreen: #5CA724
 $lightgray: #FAFAFA
 
+$text: #95989A
+
 
 
 //_GENERAL STYLES
@@ -29,6 +31,7 @@ header
 	position: relative
 	padding-top: 1px
 	a
+		display: inline-block
 		text-decoration: none
 		text-transform: capitalize
 		color: $white
@@ -247,3 +250,85 @@ input[type=text]:focus
 //_HELPERS	
 .blur
 	filter: blur(2px)
+
+
+
+
+//_NEW CODE
+
+main
+	position: relative
+	z-index: 1
+	margin: 0.9375rem
+	padding: 1px
+	border-radius: 5px
+main > .hero
+	margin: 16px auto
+	text-align: center
+
+
+
+h1
+	margin: 0
+	color: $text
+	font-weight: 300
+	font-size: 26px
+	line-height: 39px
+	text-align: center
+p
+	margin: 14px 0 24px 0
+	color: $text
+	font-weight: 300
+	font-size: 1rem
+	line-height: 24px
+	text-align: center
+.btn-primary
+	display: block
+	padding: 0.9375rem 0
+	font-weight: 700
+	font-size: 0.875rem
+	float: none
+	margin: 0 auto
+	color: $white
+	background-color: $green
+	border-radius: 4px
+	width: 100%
+	box-shadow: 0 0 1.25rem rgba(0,0,0,0.2)
+	transition: background-color 0.35s ease, transform 0.35s ease
+	text-align: center
+	@media(min-width: 450px)
+		width: 100%
+		max-width: 250px
+	&:hover
+		background-color: darken($green, 5%)
+	&:active
+		transform: scale(0.9)
+
+.link-primary
+	display: block
+	color: $gray
+	font-weight: 300
+	float: none
+	text-align: center
+	margin: 24px auto
+	text-decoration: none
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
