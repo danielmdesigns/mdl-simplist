@@ -177,7 +177,7 @@ form > .emptyState
 	text-align: center
 	border-radius: 4px
 	background: $white
-	max-width: 600px //CHECK THIS
+	max-width: 500px //CHECK THIS
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
 .modal__title
 	font-size: 1.5rem
@@ -248,14 +248,13 @@ input[type=text]:focus
 	
 	
 //_HELPERS	
-.blur
+.is-blur
 	filter: blur(2px)
 
 
 
 
-//_NEW CODE
-
+//_PAGES
 main
 	position: relative
 	z-index: 1
@@ -270,27 +269,28 @@ main > .hero
 	text-align: center
 
 
-
+h1, p
+	color: $text
+	font-weight: 300
+	text-align: center
 h1
 	margin: 0
-	color: $text
-	font-weight: 300
 	font-size: 26px
 	line-height: 39px
-	text-align: center
 p
 	margin: 14px 0 24px 0
-	color: $text
-	font-weight: 300
 	font-size: 1rem
 	line-height: 24px
-	text-align: center
-.btn-primary
+
+.btn
 	display: block
+	float: none
+	text-align: center
+	text-decoration: none
+.btn-primary
 	padding: 0.9375rem 0
 	font-weight: 700
 	font-size: 0.875rem
-	float: none
 	margin: 0 auto
 	color: $white
 	background-color: $green
@@ -298,7 +298,6 @@ p
 	width: 100%
 	box-shadow: 0 0 1.25rem rgba(0,0,0,0.2)
 	transition: background-color 0.35s ease, transform 0.35s ease
-	text-align: center
 	@media(min-width: 450px)
 		width: 100%
 		max-width: 250px
@@ -306,15 +305,10 @@ p
 		background-color: darken($green, 5%)
 	&:active
 		transform: scale(0.9)
-
-.link-primary
-	display: block
-	color: $gray
+.btn-link
+	color: $green
 	font-weight: 300
-	float: none
-	text-align: center
 	margin: 24px auto
-	text-decoration: none
 	
 	
 	

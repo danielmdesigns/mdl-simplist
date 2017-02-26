@@ -22,11 +22,12 @@ function emptyState(){
 
 //BLUR ELEMENTS IN BACKGROUND 
 function blur(){
-	var blurElements = $(".logo, .nav-toggle, form, .fab");
+	//var blurElements = $(".logo, .nav-toggle, form, .fab");
+	var blurElements = $(".blur");
 	if($("#js-modal").is(":visible")){
-		blurElements.addClass("blur");
+		blurElements.addClass("is-blur");
 	}else{
-		blurElements.removeClass("blur");
+		blurElements.removeClass("is-blur");
 	}
 }
 	
@@ -46,7 +47,7 @@ $("#js-fab").on("click", function(event){
   event.preventDefault();
   event.stopPropagation();
   $("#js-modal").fadeIn("fast");
-	blur();
+  blur();
   $input.focus();
 });
 
@@ -115,12 +116,12 @@ $("ul").on("click", "li", function(){
 $(function(){
 	$('.nav-toggle, nav a').on('click',function(){
 		var nav = $('nav');
-		var blurItems = $(".logo, form");
+		var blurItems = $(".blur");
 		nav.toggleClass('open');
 		if(nav.hasClass("open")){
-			blurItems.addClass("blur");
+			blurItems.addClass("is-blur");
 		}else{
-			blurItems.removeClass("blur");
+			blurItems.removeClass("is-blur");
 		}
 	});
 });
