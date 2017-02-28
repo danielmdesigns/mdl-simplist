@@ -39,9 +39,11 @@ header
 	width: 100%
 	max-width: 700px
 .logo
-	display: block
-	margin: 0 auto
-	height: 40px
+	//display: block
+	//text-align: center
+	//margin: 0 auto
+	height: 60px
+	display: none
 nav ul
 	margin: 40px 0
 	clear: both
@@ -128,7 +130,8 @@ footer
 		
 @media (min-width: 600px)
 	.logo
-		float: left
+		display: inline-block
+		margin: 0 auto 20px
 	nav
 		float: right
 	nav ul
@@ -141,12 +144,12 @@ footer
 		&:last-of-type
 			padding-right: 0
 	main
-		margin: 100px auto 0
+		margin: 40px auto
 	.side1, .side2
 		float: left
 		width: 40%
 	.side1
-		padding-left: 40px
+		padding-left: 20px
 	.side2
 		//border: 1px solid tomato
 		margin-top: 0
@@ -158,10 +161,8 @@ footer
 	footer
 		margin-top: 150px
 @media (min-width: 750px)
-	main
-		margin: 150px auto 0
 	.side2
-		margin-top: 40px
+		margin-top: 30px
 	
 	
 //_MODAL
