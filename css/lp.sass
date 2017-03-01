@@ -19,99 +19,82 @@ $db: dodgerblue
 	padding: 0
 	list-style: none
 	text-decoration: none
-	//box-sizing: border-box
 
 body
 	font-family: "Roboto","Helvetica","Arial",sans-serif
 	font-weight: 100
-	background-color: $white
 	color: $black
-
-
+	background-color: $white
 .container
-	padding: 20px
-	//border: 1px solid $gray
 	margin: 20px auto 0
-
+	padding: 20px
 header
 	display: block
-	margin: 0 auto
 	width: 100%
 	max-width: 700px
+	margin: 0 auto
 .logo
-	//display: block
-	//text-align: center
-	//margin: 0 auto
-	height: 60px
 	display: none
+	height: 60px
 nav ul
-	margin: 40px 0
 	clear: both
+	margin: 40px 0
 nav li
-	text-align: center
 	line-height: 24px
+	text-align: center
 	&:hover
 		color: $gray
 	a
-		color: $green
-		font-weight: 300
 		font-size: 14px
-	
+		font-weight: 300
+		color: $green
 main
-	//border: 1px solid green
 	display: table
-	margin: 0 auto
-	clear: both
 	float: none
+	clear: both
 	width: 100%
 	max-width: 900px
-
-.side1, .side2
+	margin: 0 auto
+.col-1, .col-2
 	display: block
 	width: 100%
-
-.side2
-	margin-top: 40px
-	margin-bottom: 40px
-
+.col-2
+	margin: 40px 0
 .hero
-	margin: 0 auto
 	display: block
 	width: 100%
 	max-width: 360px
+	margin: 0 auto
 	text-align: center
-
 h1
-	font-weight: 100
 	font-size: 48px
+	font-weight: 100
 	text-align: center
-
 p
-	font-weight: 300
 	font-size: 16px
+	font-weight: 300
 	line-height: 24px
 	margin: 20px 0 30px 0
-	color: $grey
 	text-align: center
-
+	color: $grey
 .button
+	font-size: 0.875rem
+	font-weight: 700
 	display: block
 	float: none
-	text-align: center
-	border: 0
-	margin: 0 auto
-	text-decoration: none
-	padding: 1rem 0
-	font-weight: 700
-	font-size: 0.875rem
-	color: $white
-	background-color: $green
-	border-radius: 4px
 	width: 100%
-	box-shadow: 0 0 1.25rem rgba(0,0,0,0.2)
-	transition: background-color 0.35s ease, transform 0.35s ease
+	margin: 0 auto
+	padding: 1rem 0
 	cursor: pointer
+	transition: background-color 0.35s ease, transform 0.35s ease
+	text-align: center
+	text-decoration: none
+	color: $white
+	border: 0
+	border-radius: 4px
 	outline: none
+	background-color: $green
+	box-shadow: 0 0 1.25rem rgba(0,0,0,0.2)
 	@media(min-width: 450px)
 		width: 100%
 		max-width: 250px
@@ -119,15 +102,14 @@ p
 		background-color: darken($green, 5%)
 	&:active
 		transform: scale(0.9)
-
 footer
+	font-size: 12px
+	font-weight: 300
 	float: none
 	clear: both
-	font-size: 12px
-	color: $grey
 	text-align: center
-	font-weight: 300
-		
+	color: $grey	
+
 @media (min-width: 600px)
 	.logo
 		display: inline-block
@@ -145,13 +127,12 @@ footer
 			padding-right: 0
 	main
 		margin: 40px auto
-	.side1, .side2
+	.col-1, .col-2
 		float: left
 		width: 40%
-	.side1
+	.col-1
 		padding-left: 20px
-	.side2
-		//border: 1px solid tomato
+	.col-2
 		margin-top: 0
 		margin-left: 40px
 	h1, p
@@ -161,112 +142,8 @@ footer
 	footer
 		margin-top: 150px
 @media (min-width: 750px)
-	.side2
+	.col-2
 		margin-top: 30px
-	
-	
-//_MODAL
- 
-//pop-up modal
-.morph-modal
-	position: fixed
-	top: 0
-	left: 0
-	height: 100%
-	width: 100%
-	opacity: 0
-	visibility: hidden
-  
-.morph-modal.open-modal
-	opacity: 1
-	visibility: visible
-
-//popup text
-.modal-content, .close-modal
-	color: $white
-	opacity: 0
-	transition: opacity .2s
-	z-index: 2
-  
-.modal-visible .modal-content,
-.modal-visible .close-modal
-	opacity: 1
-  
-.modal-content
-	position: relative
-	height: 100%
-	overflow: auto
-	padding: 40px 20%
-	p, a
-		color: $white
-	h2
-		font-weight: 100
-		text-align: center
-	p
-		text-align: left
-	p.title
-		font-weight: 700
-		margin: 0
-	a
-		text-decoration: underline
-		cursor: pointer
-	ul
-		margin: 0 30px
-	ul > li
-		list-style: disc
-		font-weight: 300
-	ul > li.noStyle
-		list-style: none !important
-	
-.list-group
-	margin-bottom: 40px
-
-//"X" button
-.close-modal
-	position: absolute
-	top: 20px
-	right: 20px
-	cursor: pointer
-	height: 56px
-	width: 56px
-	background: transparent
-	border: none
-	text-indent: 100%
-	overflow: hidden
-	color: transparent
-	white-space: nowrap
-	transition: background .2s
-  
-//the two lines that form the "X"
-.close-modal::before,
-.close-modal::after
-	content: ""
-	position: absolute
-	top: 50%
-	left: 50%
-	height: 2px
-	width: 24px
-	background: rgba(255,255,255,0.3)
-	color: transparent
-.close-modal::before
-	transform: translate(-50%) rotate(45deg)
-.close-modal::after
-	transform: translate(-50%) rotate(-45deg)
-
-  
-//buttons
-.morph-background
-	display: inline-block
-	height: 45px
-	width: 170px
-	background: linear-gradient($green, $drkgreen)
-  
-.morph-background
-	position: fixed
-	z-index: 1
-	top: 0
-	left: 0
-	transition: transform .3s
   
 
 
