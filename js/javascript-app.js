@@ -132,7 +132,7 @@ $("#js-ath").hide();
 if(window.navigator.standalone === false){
 	setTimeout(function(){
 		$("#js-ath").show();
-	}, 300000);
+	}, 30000); //30s
 }else{
   //...
 }
