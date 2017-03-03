@@ -22,7 +22,6 @@ function emptyState(){
 
 //BLUR ELEMENTS IN BACKGROUND 
 function blur(){
-	//var blurElements = $(".logo, .nav-toggle, form, .fab");
 	var blurElements = $(".blur");
 	if($("#js-modal").is(":visible")){
 		blurElements.addClass("is-blur");
@@ -46,7 +45,7 @@ $("#js-fab").on("click", function(event){
   $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-modal").fadeIn("fast");
+  $("#js-modal").show();
   blur();
   $input.focus();
 });
@@ -128,14 +127,19 @@ $(function(){
 	
 //***** ADD TO HOMESCREEN *****//
 $("#js-ath").hide();
-//ALERT USER TO SAVE TO HOME SCREEN IF NOT VIEWING IN FULL SCREEN APP MODE
+//IF NOT VIEWING IN APP MODE
 if(window.navigator.standalone === false){
+	//SHOW ATH MESSAGE EVERY 30s
 	setTimeout(function(){
 		$("#js-ath").show();
 	}, 30000); //30s
-}else{
-  //...
 }
+//IF VIEWING IN APP MODE
+if(window.navigator.standalone){
+	$(".statusbar").css("padding","12px");
+	$("img.nav-toggle.close").css("top","2.5rem");
+}
+
 $("#js-ath").on("click", function(){
 	$("#js-ath").hide();
 });
