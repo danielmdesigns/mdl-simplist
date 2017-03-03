@@ -29,7 +29,7 @@ body
 //_MENU
 header
 	position: relative
-	padding-top: 1px
+	margin-top: 5px
 	a
 		display: inline-block
 		text-decoration: none
@@ -44,7 +44,7 @@ nav
 	z-index: 10
 	top: 0
 	right: 0
-	width: 60%
+	width: 75%
 	height: 100%
 	transition: transform 0.35s ease
 	transform: translateX(102%)
@@ -234,6 +234,7 @@ input[type=text]:focus
 
 //_ADD TO HOMESCREEN SCREEN
 .ath
+	display: block
 	position: fixed
 	z-index: 10
 	top: 0
@@ -250,7 +251,10 @@ input[type=text]:focus
 //_HELPERS	
 .is-blur
 	filter: blur(2px)
-
+.is-hidden
+	display: none
+.is-visible
+	display: block
 
 
 
@@ -322,6 +326,14 @@ p
 .bull-list__item
 	padding-left: 10px
 
+
+.statusbar
+	padding: 0
+	margin-bottom: 2px
+	background-color: $green
+	
+	
+	
 	
 	
 	
