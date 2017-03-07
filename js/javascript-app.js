@@ -127,17 +127,25 @@ $(function(){
 	
 //***** ADD TO HOMESCREEN *****//
 $("#js-ath").hide();
-//IF NOT VIEWING IN APP MODE
-if(window.navigator.standalone === false){
-	//SHOW ATH MESSAGE EVERY 30s
-	setTimeout(function(){
-		$("#js-ath").show();
-	}, 30000); //30s
-}
+////IF NOT VIEWING IN APP MODE
+//if(window.navigator.standalone === false){
+//	//SHOW ATH MESSAGE EVERY 30s
+//	setTimeout(function(){
+//		$("#js-ath").show();
+//	}, 30000); //30s
+//}
+	
 //IF VIEWING IN APP MODE
 if(window.navigator.standalone){
 	$(".statusbar").css("padding","12px");
 	$("img.nav-toggle.close").css("top","2.5rem");
+}else if(window.navigator.standalone === false){
+	//SHOW ATH MESSAGE EVERY 30s
+	setTimeout(function(){
+		$("#js-ath").show();
+	}, 30000); //30s
+}else{
+	//...
 }
 
 $("#js-ath").on("click", function(){
