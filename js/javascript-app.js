@@ -148,7 +148,7 @@ if(window.navigator.standalone){
 	$(".statusbar").css(statusBarProperties);
 	$("header").css("margin-top","1.325rem");
 	//$("img.nav-toggle.close").css("top","2.5rem");
-	$("nav.open nav.toggle").css("top","2.5rem");
+	$(".nav-toggle.close").css("top","2.5rem");
 }else if(window.navigator.standalone === false){
 	//SHOW ATH MESSAGE EVERY 30s
 	setTimeout(function(){
