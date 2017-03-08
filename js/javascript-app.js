@@ -127,17 +127,35 @@ $(function(){
 	
 //***** ADD TO HOMESCREEN *****//
 $("#js-ath").hide();
-//IF NOT VIEWING IN APP MODE
-if(window.navigator.standalone === false){
+////IF NOT VIEWING IN APP MODE
+//if(window.navigator.standalone === false){
+//	//SHOW ATH MESSAGE EVERY 30s
+//	setTimeout(function(){
+//		$("#js-ath").show();
+//	}, 30000); //30s
+//}
+	
+//IF VIEWING IN APP MODE
+if(window.navigator.standalone){
+	var statusBarProperties = {
+		"position":"fixed",
+		"z-index":"100",
+		"top":"0",
+		"left":"0",
+		"width":"100%",
+		"padding":"0.75rem"
+	};
+	$(".statusbar").css(statusBarProperties);
+	$("header").css("margin-top","1.325rem");
+	//$("img.nav-toggle.close").css("top","2.5rem");
+	$(".nav-toggle.close").css("top","2.5rem");
+}else if(window.navigator.standalone === false){
 	//SHOW ATH MESSAGE EVERY 30s
 	setTimeout(function(){
 		$("#js-ath").show();
 	}, 30000); //30s
-}
-//IF VIEWING IN APP MODE
-if(window.navigator.standalone){
-	$(".statusbar").css("padding","12px");
-	$("img.nav-toggle.close").css("top","2.5rem");
+}else{
+	//...
 }
 
 $("#js-ath").on("click", function(){
