@@ -53,6 +53,8 @@ nav
 	&.open 
 		overflow: auto
 		transform: translateX(1rem)
+	@media(min-width: 666px)
+		width: 40%
 nav ol 
 	margin: 4rem 0 0
 	padding: 0
@@ -108,7 +110,8 @@ ul#list
 		//content: "\f1db"
 		font-size: 1.25rem
 		float: right
-		content: "⚬"
+		//content: "⚬"
+		content: url('http://www.danielmdesigns.com/app/symplist/imgs/list/checkbox.png')
 		color: $gray
 form > .emptyState
 	margin: 3.125rem auto
