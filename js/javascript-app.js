@@ -9,13 +9,13 @@ function emptyState(){
 	var emptyStateGraphic = $(".emptyState");
 	var listView = $("#list");
 	if($("ul li").length === 0){
-		emptyStateGraphic.show();
+		emptyStateGraphic.removeClass("is-hidden").show();
 		listView.css("box-shadow","");
 	}else if($("ul li").length >= 1){
-		emptyStateGraphic.hide();
+		emptyStateGraphic.addClass("is-hidden").hide();
 		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
-		emptyStateGraphic.hide();
+		emptyStateGraphic.addClass("is-hidden").hide();
 		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 }
@@ -45,6 +45,7 @@ $("#js-fab").on("click", function(event){
   $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
+	$(".modal").removeClass("is-hidden");
   $("#js-modal").show();
   blur();
   $input.focus();
@@ -118,6 +119,7 @@ $(function(){
 		var blurItems = $(".blur");
 		nav.toggleClass('open');
 		if(nav.hasClass("open")){
+			nav.css("display","block").removeClass("is-hidden");
 			blurItems.addClass("is-blur");
 		}else{
 			blurItems.removeClass("is-blur");
@@ -127,13 +129,6 @@ $(function(){
 	
 //***** ADD TO HOMESCREEN *****//
 $("#js-ath").hide();
-////IF NOT VIEWING IN APP MODE
-//if(window.navigator.standalone === false){
-//	//SHOW ATH MESSAGE EVERY 30s
-//	setTimeout(function(){
-//		$("#js-ath").show();
-//	}, 30000); //30s
-//}
 	
 //IF VIEWING IN APP MODE
 if(window.navigator.standalone){
@@ -147,7 +142,6 @@ if(window.navigator.standalone){
 	};
 	$(".statusbar").css(statusBarProperties);
 	$("header").css("margin-top","1.325rem");
-	//$("img.nav-toggle.close").css("top","2.5rem");
 	$(".nav-toggle.close").css("top","2.5rem");
 }else if(window.navigator.standalone === false){
 	//SHOW ATH MESSAGE EVERY 30s
