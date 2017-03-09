@@ -10,118 +10,86 @@
 <!--Mobile Device Support-->
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="darkgreen" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
 <!-- Stylesheets -->
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/app/app.css?cv=0307.2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,700" type="text/css">
     
 <!-- Favicons -->
-<link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="imgs/favicons/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="imgs/favicons/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="imgs/favicons/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="imgs/favicons/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="imgs/favicons/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="imgs/favicons/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="imgs/favicons/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon-180x180.png">
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-32x32.png" sizes="32x32">
-<!--<link rel="icon" type="image/png" href="imgs/favicons/favicon-194x194.png" sizes="194x194">-->
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/png" href="imgs/favicons/android-chrome-192x192.png" sizes="192x192">
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="imgs/favicons/manifest.json">
-<link rel="shortcut icon" href="imgs/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-touch-icon-57x57.png?cv=0307">
+<link rel="apple-touch-icon" sizes="60x60" href="imgs/favicons/apple-touch-icon-60x60.png?cv=0307">
+<link rel="apple-touch-icon" sizes="72x72" href="imgs/favicons/apple-touch-icon-72x72.png?cv=0307">
+<link rel="apple-touch-icon" sizes="76x76" href="imgs/favicons/apple-touch-icon-76x76.png?cv=0307">
+<link rel="apple-touch-icon" sizes="114x114" href="imgs/favicons/apple-touch-icon-114x114.png?cv=0307">
+<link rel="apple-touch-icon" sizes="120x120" href="imgs/favicons/apple-touch-icon-120x120.png?cv=0307">
+<link rel="apple-touch-icon" sizes="144x144" href="imgs/favicons/apple-touch-icon-144x144.png?cv=0307">
+<link rel="apple-touch-icon" sizes="152x152" href="imgs/favicons/apple-touch-icon-152x152.png?cv=0307">
+<link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon-180x180.png?cv=0307">
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-32x32.png?cv=0307" sizes="32x32">
+<!--<link rel="icon" type="image/png" href="imgs/favicons/favicon-194x194.png?cv=0307" sizes="194x194">-->
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-96x96.png?cv=0307" sizes="96x96">
+<link rel="icon" type="image/png" href="imgs/favicons/android-chrome-192x192.png?cv=0307" sizes="192x192">
+<link rel="icon" type="image/png" href="imgs/favicons/favicon-16x16.png?cv=0307" sizes="16x16">
+<link rel="manifest" href="imgs/favicons/manifest.json?cv=0307">
+<link rel="shortcut icon" href="imgs/favicons/favicon.ico?cv=0307">
 <meta name="msapplication-TileColor" content="#2fc42e">
-<meta name="msapplication-TileImage" content="imgs/favicons/mstile-144x144.png">
-<meta name="msapplication-config" content="imgs/favicons/browserconfig.xml">
+<meta name="msapplication-TileImage" content="imgs/favicons/mstile-144x144.png?cv=0307">
+<meta name="msapplication-config" content="imgs/favicons/browserconfig.xml?cv=0307">
 <meta name="theme-color" content="#2fc42e">
 <title>Symplist</title>
 </head>
 <body>
 
-<div id="js-prompt" class="prompt-container">
-  <div class="prompt">
-    <h4>Please add your item</h4>
-    <input type="text" name="input"><br>
-    <button id="btn-add">ADD</button>
-    <button id="btn-cancel">CANCEL</button>
-  </div>
-</div>
+<div class="statusbar"></div>
 
-<!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
-<!-- Header -->
-<header class="mdl-layout__header">
-  <div class="mdl-layout__header-row">
-
-    <!-- App Title -->
-    <span class="mdl-layout-title">Symplist</span>
-
-    <!-- Add spacer, to align navigation to the right -->
-    <div class="mdl-layout-spacer"></div>
-
-    <!-- Dropdown Icon -->
-    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-      <i class="material-icons">more_vert</i>
-    </button>
-
-    <!-- Right Dropdown Menu -->
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-      <a id="support" href="#"><li class="mdl-menu__item"><i class="fa fa-dollar"></i> Support</li></a>
-      <a id="help" href="http://goo.gl/DoHW78" target="_blank"><li class="mdl-menu__item"><i class="fa fa-download"></i> Download App</li></a>
-    </ul>
-
-  </div>
+<header>
+  <a class="brand" href="symplist.html">
+	<img class="logo blur" src="imgs/nav/symplist_logo.png?cv=0307" alt="Symplist App">
+  </a>
+  <img class="nav-toggle blur" src="imgs/nav/icon_menu.png?cv=0307" alt="Menu">
+  <nav role="navigation">
+   	<img class="nav-toggle close" src="imgs/nav/icon_close.png?cv=0307" alt="Close">
+    <ol>
+      <li><a href="http://www.symplistapp.com" target="_blank">Homepage</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="bug.html">Report a Bug</a></li>
+      <li><a href="http://www.danielmdesigns.com/" target="_blank">Developer</a></li>
+      <li><a href="download.html">How to Download</a></li>
+    </ol>
+  </nav>
 </header>
 
-<!-- Left Drawer Menu -->
-<div class="mdl-layout__drawer">
-  <span class="mdl-layout-title">Symplist</span>
-  <nav class="mdl-navigation">
-    <a class="mdl-navigation__link" href="http://www.danielmdesigns.com/symplist/index.html" target="_blank">Homepage</a>
-    <a id="report" class="mdl-navigation__link" href="#">Report an Issue</a>
-    <a id="version" class="mdl-navigation__link" href="#">Version History</a>
-    <a id="developer" class="mdl-navigation__link" href="http://www.danielmdesigns.com" target="_blank">Developer Website</a>
-  </nav>
-</div>
-
-<!-- Main -->
-<main class="mdl-layout__content">
-  <div id="main-page-content" class="page-content">
-
-    <!-- Start List -->
-    <ul id="list">
-    </ul>
-
-    <!-- Footer & Input -->
-    <footer>
-      <form id="form" action="#">
-      </form>
-    </footer>
-
+<form id="form" class="blur" action="#">
+  <div class="emptyState">
+		<img src="imgs/states/empty_state.png?cv=0307" alt="You're all caught up!"/>
   </div>
-</main>
+  <ul id="list"></ul>
+</form>
 
-<!-- Colored FAB button with ripple -->
-<button id="fab" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-  <i class="material-icons green">add</i>
+<button id="js-fab" class="fab blur">
+	<span class="icon_fab">+</span>
 </button>
 
+<!-- Add Item -->
+<div id="js-modal" class="modal">
+  <div class="modal__container">
+    <h4 class="modal__title">Please add your item</h4>
+    <input type="text" name="input"><br>
+    <button id="btnAdd" class="btn-add">Add</button>
+    <button id="btnCancel" class="btn-cancel">Cancel</button>
+  </div>
 </div>
+
+<!-- Download Alert -->
+<div id="js-ath">
+  <div class="ath">
+		<img src="imgs/nav/ath.png?cv=0307" alt="Add to Homescreen">
+  </div>
+</div>
+
 <!-- Javascript Support -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-<script src="js/javascript-app.js"></script>
-<script>
-$(document).ready(function(){
-
-});
-</script>
+<script src="js/javascript-app.js?cv=0307.2"></script>
 </body>
 </html>

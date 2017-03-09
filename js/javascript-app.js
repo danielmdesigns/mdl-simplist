@@ -1,32 +1,76 @@
 $(document).ready(function(){
 "use strict";
 
-$("#js-prompt").hide();
+//HIDE PROMPTS ONLOAD
+$("#js-modal").hide();
+	
+//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
+function emptyState(){
+	var emptyStateGraphic = $(".emptyState");
+	var listView = $("#list");
+	if($("ul li").length === 0){
+		emptyStateGraphic.show();
+		listView.css("box-shadow","");
+	}else if($("ul li").length >= 1){
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}else{
+		emptyStateGraphic.hide();
+		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+	}
+}
 
-$("#fab").on("click", function(event){
+//BLUR ELEMENTS IN BACKGROUND 
+function blur(){
+	var blurElements = $(".blur");
+	if($("#js-modal").is(":visible")){
+		blurElements.addClass("is-blur");
+	}else{
+		blurElements.removeClass("is-blur");
+	}
+}
+	
+//TEST FOR EMPTY STATE
+window.onunload = unloadPage;
+function unloadPage(){
+	emptyState();
+}
+
+//***** LIST LOGIC && BROWSER STORAGE *****//
+		
+//SHOW PROMPT WHEN ON FAB TAP/CLICK
+$("#js-fab").on("click", function(event){
   var $input = $("input");
   $input.val("");
-  $("h4").html("Please add your item");
+  $(".modal__title").html("Please add your item");
   event.preventDefault();
   event.stopPropagation();
-  $("#js-prompt").show();
+  $("#js-modal").show();
+  blur();
   $input.focus();
 });
 
-$("#btn-cancel").on("click", function(){
-  $("#js-prompt").hide();
+//HIDE PROMPT IF USER CANCELS
+$("#btnCancel").on("click", function(){
+	$("#js-modal").hide();
+	blur();
 });
-$("#btn-add").on("click", function(){
-var $item = $("input").val();
+
+//SUBMIT TASK TO LIST ON FAB TAP/CLICK
+$("#btnAdd").on("click", function(){
+	var $item = $("input").val();
   if($item === ""){
-	$("h4").html('Sorry, but your input can not be left blank.');
+		$(".modal__title").html('Sorry, but your input can not be left blank.');
   }else if($item === null){
-	return false;
+		return false;
   }else{
-  	$("ul").append("<li>" + $item + "</li>");
-	$("#js-prompt").hide();
+		$("ul").append("<li>" + $item + "</li>");
+		emptyState();
+		$(".emptyState").hide();
+		$("#js-modal").hide();
+		blur();
   }
-  
+	
   $("#form")[0].reset();
   var list = $('#list').html();
   localStorage.setItem('list', list);
@@ -34,137 +78,88 @@ var $item = $("input").val();
   
 });
 
+//SUBMIT TASK ON ENTER KEYPRESS
 $('input').on("keypress", function(e){
-   if(e.keyCode === 13 ){
-       $("#btn-add").click();
-   }
+	if(e.keyCode === 13 ){
+	 $("#btnAdd").click();
+	 $("input").blur();
+	}
 });
 
-//list logic & browser storage
-//add using "button"
-/*$("#fab").on("click", function(){
-  var $item = prompt("Add new Item");
-  if($item === ""){
-	alert('Sorry, but your input can not be left blank.');
-  }else if($item === null){
-	return false;
-  }else{
-  	$("ul").append("<li>" + $item + "</li>");
-  }*/
-    
-//set
-/*$("#form")[0].reset();
-  var list = $('#list').html();
-  localStorage.setItem('list', list);
-  return false;
-});*/
-    
-//shows
-if(localStorage.getItem('list')){
+//SHOW LIST
+if(localStorage.getItem('list')){	
   $('#list').html(localStorage.getItem('list'));
+	emptyState();
 }
     
-//remove
-$("ul").on("click", "li", function (){
-    $(this).remove();
-    var i = $(this).text();
-	// get the current list as a string.
-    var currentList = localStorage.getItem('list');
-	// replace the clicked item with a blank string.
-    var newList = currentList.replace('<li>' + i + '</li>', '');
-	// update the localStorage with the new list
-    localStorage.setItem('list', newList);
-});
+//REMOVE LIST ITEM
+$("ul").on("click", "li", function(){
+	$(this).remove();
+	var i = $(this).text();
 
-/* Supporting Pages */
-$("#developer").on("click", function(){
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-});
-//report a bug
-$("#report").on("click", function(){
-  $("#main-page-content").load("bug.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
-//version history
-$("#version").on("click", function(){
-  $("#main-page-content").load("version.html");
-  $("#fab").hide();
-  $(".mdl-layout__drawer").toggleClass("is-visible");
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
+	//GET CURRENT LIST AS A STRING
+	var currentList = localStorage.getItem('list');
 
-//support
-$("#support").on("click", function(e){
-  e.stopImmediatePropagation();
-  $("#main-page-content").load("support.html");
-  $("#fab").hide();
-  $(function(){
-	  function changeIcon(){
-		  var getIcon = document.querySelector(".mdl-layout__drawer-button i");
-		  if(getIcon){
-			  getIcon.textContent = "arrow_back";
-		  }
-		  if(!getIcon){
-			  setTimeout(function(){
-				  changeIcon();
-			  }, 50);
-		  }
-	  }
-	  changeIcon();
-  });
-  $(".mdl-layout__drawer-button i").on("click", function(e){
-	  e.stopImmediatePropagation();
-	  window.location.href = "symplist.html";
-  });
-});
+	//REPLACE THE CLICKED ITEM WITH A BLANK STRING
+	var newList = currentList.replace('<li>' + i + '</li>', '');
 
-$("#help").on("click", function(e){
-  e.stopImmediatePropagation();
+	//UPDATE LOCALSTORAGE WITH UPDATED LIST
+	localStorage.setItem('list', newList);
+	
+	//CHECK FOR EMPTY LIST
+	emptyState();
+		
 });
-
-//if url is not being viewed in Full Screen App Mode, alert users to save to home screen
-if(window.navigator.standalone === false){
-  setTimeout(function(){
-	alert("Add this app to your home screen to quickly access Symplist!");
-  }, 10000);
+		
+//***** NAVIGATION MENU *****//
+$(function(){
+	$('.nav-toggle, nav a').on('click',function(){
+		var nav = $('nav');
+		var blurItems = $(".blur");
+		nav.toggleClass('open');
+		if(nav.hasClass("open")){
+			blurItems.addClass("is-blur");
+		}else{
+			blurItems.removeClass("is-blur");
+		}
+	});
+});
+	
+//***** ADD TO HOMESCREEN *****//
+$("#js-ath").hide();
+////IF NOT VIEWING IN APP MODE
+//if(window.navigator.standalone === false){
+//	//SHOW ATH MESSAGE EVERY 30s
+//	setTimeout(function(){
+//		$("#js-ath").show();
+//	}, 30000); //30s
+//}
+	
+//IF VIEWING IN APP MODE
+if(window.navigator.standalone){
+	var statusBarProperties = {
+		"position":"fixed",
+		"z-index":"100",
+		"top":"0",
+		"left":"0",
+		"width":"100%",
+		"padding":"0.75rem"
+	};
+	$(".statusbar").css(statusBarProperties);
+	$("header").css("margin-top","1.325rem");
+	//$("img.nav-toggle.close").css("top","2.5rem");
+	$(".nav-toggle.close").css("top","2.5rem");
+}else if(window.navigator.standalone === false){
+	//SHOW ATH MESSAGE EVERY 30s
+	setTimeout(function(){
+		$("#js-ath").show();
+	}, 30000); //30s
 }else{
-  //NaN
+	//...
 }
+
+$("#js-ath").on("click", function(){
+	$("#js-ath").hide();
+});
 
 });
