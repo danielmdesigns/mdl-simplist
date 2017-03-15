@@ -137,6 +137,9 @@ $("#js-ath").hide();
 	
 //IF VIEWING IN APP MODE
 if(window.navigator.standalone){
+	
+if(window.innerHeight > window.innerWidth){
+	//portrait = true;
 	var statusBarProperties = {
 		"position":"fixed",
 		"z-index":"100",
@@ -147,8 +150,14 @@ if(window.navigator.standalone){
 	};
 	$(".statusbar").css(statusBarProperties);
 	$("header").css("margin-top","1.325rem");
-	//$("img.nav-toggle.close").css("top","2.5rem");
 	$(".nav-toggle.close").css("top","2.5rem");
+}else{
+	//portrait = false; in landscape
+	$(".statusbar").css("padding","0");
+	$("header").css("margin-top","5px");
+	$(".nav-toggle.close").css("top","1rem");
+}
+	
 }else if(window.navigator.standalone === false){
 	//SHOW ATH MESSAGE EVERY 30s
 	setTimeout(function(){
