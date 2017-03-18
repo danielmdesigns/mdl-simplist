@@ -40,7 +40,9 @@ header
 .logo
 	height: 1.5rem
 	margin: 0.9375rem 0 0.9375rem 0.9375rem
-nav 
+nav
+	display: block
+	opacity: 1
 	font-weight: 300
 	position: fixed
 	z-index: 10
@@ -48,11 +50,11 @@ nav
 	right: 0
 	width: 75%
 	height: 100%
-	transition: transform 0.35s ease
+	transition: opacity 0.35s ease, transform 0.35s ease
 	transform: translateX(102%)
 	background: linear-gradient($green, $drkgreen)
 	box-shadow: 0 0 12px 2px rgba(0,0,0,0.25)
-	&.open 
+	&.open
 		overflow: auto
 		transform: translateX(1rem)
 	@media(min-width: 666px)
@@ -81,7 +83,7 @@ nav.open a
 nav.open .nav-toggle
 	font-size: 1.25rem
 	position: absolute
-	top: 1.3rem
+	top: 1.5rem
 	right: 2.3rem
 	float: right
 	cursor: pointer
@@ -257,7 +259,8 @@ input[type=text]:focus
 .is-blur
 	filter: blur(2px)
 .is-hidden
-	display: none
+	//display: none
+	opacity: 0
 .is-visible
 	display: block
 
