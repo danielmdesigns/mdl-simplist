@@ -1,0 +1,20 @@
+###Basic info
+Designed this app...
+
+###Tools Used
+Adobe Xd, Ps, Dw, Ai, Marvel POP, Balsamiq, Pen & Paper
+
+###Tags
+interface
+app
+interaction
+ux
+ui
+app
+ios
+case study
+responsive
+web
+design
+progressive web app
+development
