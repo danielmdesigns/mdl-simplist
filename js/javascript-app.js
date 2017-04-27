@@ -4,7 +4,7 @@ $(document).ready(function(){
 //HIDE PROMPTS ONLOAD
 $("#js-modal").hide();
 	
-//REMOVE SHADOW & SHOW EMPTY IMG ON LIST IF NO LIST
+//REMOVE SHADOW & SHOW GRAPHIC IF LIST IS EMPTY
 function emptyState(){
 	var emptyStateGraphic = $(".emptyState");
 	var listView = $("#list");
