@@ -1,13 +1,19 @@
 //_COLORS
-$primary: #2dc32c
+// $primary: #2dc32c
+$primary: #00D563
 $accent: #ff4081
 $gray: #DDDDDD
 $white: #FFFFFF
-$black: #444444
+// $black: #444444
 
-$green: #87DB48
+
+$green: $primary
 $drkgreen: #5CA724
 $lightgray: #FAFAFA
+
+$gray-100: #EFF3F3
+$gray-500: #979CA3
+$black: #333333
 
 $text: #95989A
 
@@ -22,7 +28,7 @@ $text: #95989A
 body
 	font-family: "Roboto","Helvetica","Arial",sans-serif
 	font-weight: 100
-	background-color: $lightgray
+	background-color: $white
 
 
 
@@ -93,30 +99,30 @@ nav.open .nav-toggle
 ul#list
 	position: relative
 	z-index: 1
-	margin: 0.9375rem
+	margin: 0.9375rem 0 0 0
 	padding: 1px
-	border-radius: 5px
+	//border-radius: 5px
 	//box-shadow: 0 0 20px 0 rgba(0,0,0,0.15)
 #list li
-	font-size: 0.9375rem
-	font-weight: 300
+	font-size: 1rem
+	font-weight: 400
 	display: block
 	overflow: hidden
 	padding: 1rem
 	cursor: pointer
 	color: $black
-	border-bottom: 1px solid $lightgray
-	background: white
+	border-bottom: 1px solid $gray-100
+	background: $white
 	&:last-of-type
-		border: none
+		//border: none
 	&:after
 		//font-family: FontAwesome
 		//content: "\f1db"
 		font-size: 1.25rem
 		float: right
 		//content: "⚬"
-		content: url('http://www.danielmdesigns.com/app/symplist/imgs/list/checkbox.png')
-		color: $gray
+		content: url('/imgs/list/check.png')
+		color: $black
 form > .emptyState
 	margin: 3.125rem auto
 	text-align: center
@@ -187,8 +193,8 @@ form > .emptyState
 	max-width: 500px //CHECK THIS
 	box-shadow: 0 0 20px rgba(0,0,0,0.2)
 .modal__title
-	font-size: 1.5rem
-	font-weight: 300
+	font-size: 1.25rem
+	font-weight: 400
 	padding: 1.25rem
 	color: $black
 		
@@ -210,7 +216,7 @@ button
 		font-weight: 700
 		color: $green
 	&.btn-cancel
-		color: $gray
+		color: $gray-500
 
 	
 	

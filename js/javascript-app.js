@@ -10,13 +10,13 @@ function emptyState(){
 	var listView = $("#list");
 	if($("ul li").length === 0){
 		emptyStateGraphic.removeClass("is-hidden").show();
-		listView.css("box-shadow","");
+		//listView.css("box-shadow","");
 	}else if($("ul li").length >= 1){
 		emptyStateGraphic.addClass("is-hidden").hide();
-		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		//listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}else{
 		emptyStateGraphic.addClass("is-hidden").hide();
-		listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
+		//listView.css("box-shadow","0 0 20px 0 rgba(0,0,0,0.2)");
 	}
 }
 

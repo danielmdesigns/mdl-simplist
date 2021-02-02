@@ -1,105 +1,212 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<!--Character Encoding-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <head>
+    <!--Character Encoding-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<!--IE compatibility mode-->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--IE compatibility mode-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<!--Mobile Device Support-->
-<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"/>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Symplist">
-<meta name="description" content="Symplist is a dead-simple way to stay on top of your tasks. Making it perfect for busy people.">
-    
-<!-- Stylesheets -->
-<link rel="stylesheet" href="css/app/app.css?cv=0329.1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,700" type="text/css">
-    
-<!-- Favicons -->
-<link rel="apple-touch-icon" sizes="57x57" href="imgs/favicons/apple-touch-icon-57x57.png?cv=0320">
-<link rel="apple-touch-icon" sizes="60x60" href="imgs/favicons/apple-touch-icon-60x60.png?cv=0320">
-<link rel="apple-touch-icon" sizes="72x72" href="imgs/favicons/apple-touch-icon-72x72.png?cv=0320">
-<link rel="apple-touch-icon" sizes="76x76" href="imgs/favicons/apple-touch-icon-76x76.png?cv=0320">
-<link rel="apple-touch-icon" sizes="114x114" href="imgs/favicons/apple-touch-icon-114x114.png?cv=0320">
-<link rel="apple-touch-icon" sizes="120x120" href="imgs/favicons/apple-touch-icon-120x120.png?cv=0320">
-<link rel="apple-touch-icon" sizes="144x144" href="imgs/favicons/apple-touch-icon-144x144.png?cv=0320">
-<link rel="apple-touch-icon" sizes="152x152" href="imgs/favicons/apple-touch-icon-152x152.png?cv=0320">
-<link rel="apple-touch-icon" sizes="180x180" href="imgs/favicons/apple-touch-icon-180x180.png?cv=0320">
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-32x32.png?cv=0320" sizes="32x32">
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-96x96.png?cv=0320" sizes="96x96">
-<link rel="icon" type="image/png" href="imgs/favicons/android-chrome-192x192.png?cv=0320" sizes="192x192">
-<link rel="icon" type="image/png" href="imgs/favicons/favicon-16x16.png?cv=0320" sizes="16x16">
-<link rel="manifest" href="imgs/favicons/manifest.json?cv=0320">
-<link rel="shortcut icon" href="imgs/favicons/favicon.ico?cv=0320">
-<meta name="msapplication-TileColor" content="#2fc42e">
-<meta name="msapplication-TileImage" content="imgs/favicons/mstile-144x144.png?cv=0320">
-<meta name="msapplication-config" content="imgs/favicons/browserconfig.xml?cv=0320">
-<meta name="theme-color" content="#2fc42e">
-<title>Symplist</title>
+    <!--Mobile Device Support-->
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Symplist" />
+    <meta
+      name="description"
+      content="Symplist is a dead-simple way to stay on top of your tasks. Making it perfect for busy people."
+    />
 
-<!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-68721401-1', 'auto');
-  ga('send', 'pageview');
-</script>
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/app/app.css?cv=100" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700"
+      type="text/css"
+    />
 
-<header>
-  <a class="brand" href="symplist.html">
-	<img class="logo blur" src="imgs/nav/symplist_logo.png?cv=0320" alt="Symplist App">
-  </a>
-  <img class="nav-toggle blur" src="imgs/nav/icon_menu.png?cv=0320" alt="Menu">
-  <nav role="navigation" class="is-hidden">
-   	<img class="nav-toggle close" src="imgs/nav/icon_close.png?cv=0320" alt="Close">
-    <ol>
-      <li><a href="http://www.symplistapp.com" target="_blank">Homepage</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="bug.html">Report a Bug</a></li>
-      <li><a href="http://www.danielmdesigns.com/" target="_blank">Developer</a></li>
-      <li><a href="download.html">How to Download</a></li>
-    </ol>
-  </nav>
-</header>
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="imgs/favicons/apple-touch-icon-57x57.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="imgs/favicons/apple-touch-icon-60x60.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="imgs/favicons/apple-touch-icon-72x72.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="imgs/favicons/apple-touch-icon-76x76.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="imgs/favicons/apple-touch-icon-114x114.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="imgs/favicons/apple-touch-icon-120x120.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="imgs/favicons/apple-touch-icon-144x144.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="imgs/favicons/apple-touch-icon-152x152.png?cv=0320"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="imgs/favicons/apple-touch-icon-180x180.png?cv=0320"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="imgs/favicons/favicon-32x32.png?cv=0320"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="imgs/favicons/favicon-96x96.png?cv=0320"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="imgs/favicons/android-chrome-192x192.png?cv=0320"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="imgs/favicons/favicon-16x16.png?cv=0320"
+      sizes="16x16"
+    />
+    <link rel="manifest" href="imgs/favicons/manifest.json?cv=0320" />
+    <link rel="shortcut icon" href="imgs/favicons/favicon.ico?cv=0320" />
+    <meta name="msapplication-TileColor" content="#2fc42e" />
+    <meta
+      name="msapplication-TileImage"
+      content="imgs/favicons/mstile-144x144.png?cv=0320"
+    />
+    <meta
+      name="msapplication-config"
+      content="imgs/favicons/browserconfig.xml?cv=0320"
+    />
+    <meta name="theme-color" content="#2fc42e" />
+    <title>Symplist</title>
 
-<form id="form" class="blur" action="#">
-  <div class="emptyState">
-		<img src="imgs/states/empty_state.png?cv=0320" alt="You're all caught up!"/>
-  </div>
-  <ul id="list"></ul>
-</form>
+    <!-- Google Analytics -->
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-68721401-1", "auto");
+      ga("send", "pageview");
+    </script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="symplist.html">
+        <img
+          class="logo blur"
+          src="imgs/nav/symplist_logo@2x.png"
+          alt="Symplist App"
+        />
+      </a>
+      <img
+        class="nav-toggle blur"
+        src="imgs/nav/icon_menu.png?cv=0320"
+        alt="Menu"
+      />
+      <nav role="navigation" class="is-hidden">
+        <img
+          class="nav-toggle close"
+          src="imgs/nav/icon_close.png?cv=0320"
+          alt="Close"
+        />
+        <ol>
+          <li>
+            <a href="http://www.symplistapp.com" target="_blank">Homepage</a>
+          </li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="bug.html">Report a Bug</a></li>
+          <li>
+            <a href="http://www.danielmdesigns.com/" target="_blank"
+              >Developer</a
+            >
+          </li>
+          <li><a href="download.html">How to Download</a></li>
+        </ol>
+      </nav>
+    </header>
 
-<button id="js-fab" class="fab blur">
-	<span class="icon_fab">+</span>
-</button>
+    <form id="form" class="blur" action="#">
+      <div class="emptyState">
+        <img
+          src="imgs/states/empty_state.png?cv=0320"
+          alt="You're all caught up!"
+        />
+      </div>
+      <ul id="list"></ul>
+    </form>
 
-<!-- Add Item -->
-<div id="js-modal" class="modal is-hidden">
-  <div class="modal__container">
-    <h4 class="modal__title">Please add your item</h4>
-    <input type="text" name="input"><br>
-    <button id="btnAdd" class="btn-add">Add</button>
-    <button id="btnCancel" class="btn-cancel">Cancel</button>
-  </div>
-</div>
+    <button id="js-fab" class="fab blur">
+      <span class="icon_fab">+</span>
+    </button>
 
-<!-- Download Alert -->
-<div id="js-ath">
-  <div class="ath is-hidden">
-		<img src="imgs/nav/ath.png?cv=0320" alt="Add to Homescreen">
-  </div>
-</div>
+    <!-- Add Item -->
+    <div id="js-modal" class="modal is-hidden">
+      <div class="modal__container">
+        <h4 class="modal__title">Add your item</h4>
+        <input type="text" name="input" /><br />
+        <button id="btnAdd" class="btn-add">Add</button>
+        <button id="btnCancel" class="btn-cancel">Cancel</button>
+      </div>
+    </div>
 
-<!-- Javascript Support -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/javascript-app.js?cv=0329.1"></script>
-</body>
+    <!-- Download Alert -->
+    <div id="js-ath">
+      <div class="ath is-hidden">
+        <img src="imgs/nav/ath.png?cv=0320" alt="Add to Homescreen" />
+      </div>
+    </div>
+
+    <!-- Javascript Support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/javascript-app.js?cv=0329.1"></script>
+  </body>
 </html>
